@@ -1,0 +1,65 @@
+.headerp {
+    font-size: 2.5rem;
+}
+
+.abtheader {
+    margin-top: 1.5rem;
+}
+
+header span {
+    color: #FB9D00;
+}
+
+.spann {
+    color: #FB9D00;
+}
+
+.description {
+    padding: 3rem;
+}
+
+footer p {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footerlogo {
+    display: block;
+    margin: 0 auto;
+}
+
+.description li {
+    color: #FB9D00;
+
+}
+
+.image-gallery {
+    margin-top: 3rem;
+}
+
+.image-gallery .flex {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.card {
+width: 20%; 
+}
+
+.card img {
+width: 100%;
+}
+
+.card-img {
+  height: 60vh;
+  width: 60vw !important;
+  margin: 0 auto !important;
+  display: block;
+
+}
+
+hr {
+    width: 8rem;
+    border: 3px solid #FB9D00 !important;  
+}

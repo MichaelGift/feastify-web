@@ -15,7 +15,7 @@ export default function EventType() {
                 <Link to="/service-day" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Corporate</button></Link>  
                 <Link to="/service-day" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Family Gathering</button></Link>
                 <Link to="/service-day" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Anniversary</button></Link>
-                <Link to="/service-day" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Concert</button></Link>     
+                <Link to="/coming-soon" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Concert</button></Link>     
                                 
             </div>
         </div>

@@ -1,12 +1,12 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 .eventpage {
   height: 100vh;
 }
-.footer {
+/* .footer {
   margin-top: 7rem;
-}
+} */
 .landinghead {
   background-color: black;
   color: white;
@@ -29,6 +29,9 @@
 }
 
 .landing-btn {
+  display: block !important;
+  margin: 0 auto !important;
+  margin-top: 1rem !important;
   background-color: white;
   border-color: #FB9D00;
   border-radius: 5rem;
@@ -37,6 +40,18 @@
   padding: 0.5rem;
   font-size: 1.2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cuisinebtn {
+  margin-bottom: -6rem;
+}
+
+.cuisinesec {
+  margin-bottom: 13rem;
+}
+
+.cuisinesec h1 {
+  margin-bottom: -5rem;
 }
 
 
@@ -49,7 +64,7 @@
 }
 .calendar {
 width: 100%;
-max-width: 400px; /* Adjust as per your layout */
+max-width: 400px;
 margin: auto;
 padding: 1rem;
 }

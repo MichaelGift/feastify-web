@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Container } from 'react-bootstrap';
-import logo from "../../assets/navicon/logo_nobg.png"
+import logo from "../../assets/navicon/feastify.png"
 
 export default function Navigation() {
   return (
-    <Navbar expand="lg" bg="light">
+    <Navbar >
       <Container>
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img
             src={logo}
             width={120}
-            height={50}
+            height={60}
             alt="feastify"
             className="d-inline-block align-middle"
           />

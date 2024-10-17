@@ -4,7 +4,7 @@ import "./footer.css"
 
 export default function Footer(){
     return(
-        <footer className="footer py-3">
+        <footer className="footer">
             <div>
                 <h4 className="text-center">Meanwhile Connect with us...</h4>
             </div>
@@ -21,9 +21,6 @@ export default function Footer(){
                 <Link href="mailto:hi@thefeastify.com" target="_blank">
                     <FaEnvelope size={24} color="black"/>
                 </Link>
-                {/*<Link href="#">
-                    <FaXTwitter size={25} color="black"/>
-                </Link>*/}
             </div>
         </footer>
     )

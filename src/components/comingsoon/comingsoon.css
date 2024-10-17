@@ -1,0 +1,41 @@
+.form-floating {
+    width: 50vw;
+    display: block;
+    margin: 0 auto;
+    /* margin-top: 10rem; */
+    padding: 8rem;
+    
+}
+.form-floating h3 {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 3rem;
+}
+
+.form-floating p {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.form-control {
+    height: 4rem;
+    margin-top: 2rem;
+    background-color: darkgray;
+    border-radius: 10px  !important;
+}
+
+.btm {
+    border-radius: 20px !important;
+    height: 3rem;
+    margin-top: 2.5rem;
+    z-index: 1;
+    background-color: #FB9D00;
+}
+
+.comingsoons {
+    background-color: black;
+    height: 90vh;
+    
+}

@@ -16,13 +16,13 @@ export default function Landingpage() {
       </section>
       <section className='landingbody'>
       <div className='landingbuttons'>
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="">
                 <Link to="/event-type" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private chef</button></Link>
-                <Link style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private barista</button></Link>
-                <Link style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private mixologist</button></Link>     
+                <Link to="/coming-soon" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private barista</button></Link>
+                <Link to="/coming-soon" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private mixologist</button></Link>     
                             
             </div>
-        </div>
+      </div>
       </section>
     </div>
   )
