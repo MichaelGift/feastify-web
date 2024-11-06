@@ -10,8 +10,8 @@ export default function Navigation() {
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img
             src={logo}
-            width={120}
-            height={60}
+            width={85}
+            height={50}
             alt="feastify"
             className="d-inline-block align-middle"
           />

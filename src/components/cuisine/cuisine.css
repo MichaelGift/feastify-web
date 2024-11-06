@@ -1,0 +1,88 @@
+.cuisinesec {
+padding: 2rem 1rem;
+}
+
+h1 {
+font-size: 2.5rem;
+color: #333;
+margin-bottom: 2rem;
+}
+
+.landingbuttons {
+margin-top: 1rem;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cuisinebtn {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.landing-btn {
+width: 100%;
+padding: 1rem;
+background-color: #FB9D00;
+color: white;
+border: none;
+border-radius: 8px;
+text-align: center;
+font-size: 1rem;
+transition: background-color 0.3s ease;
+}
+
+.landing-btn:hover {
+background-color: #FF8C00;
+}
+
+@media (max-width: 576px) {
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-btn {
+    font-size: 0.9rem;
+    padding: 1rem;
+    width: 90%; 
+    margin: 0.5rem 0;
+}
+}
+
+@media (min-width: 768px) {
+.flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.landing-btn {
+    width: 45%;
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+}
+
+
+@media (min-width: 1200px) {
+.landing-btn {
+    width: 30%; 
+    font-size: 1.1rem;
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+}

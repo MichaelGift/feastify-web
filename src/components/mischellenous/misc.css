@@ -1,7 +1,7 @@
+
 .chefchatsection {
     padding: 3rem;
 }
-
 
 .form-controlarea {
     display: block;
@@ -41,9 +41,8 @@
 
 input::-webkit-inner-spin-button {
     -webkit-appearance: none !important;
-     margin: 0 !important;
-  }
-  
+    margin: 0 !important;
+}
 
 .form-controlabel {
     border-color: #FB9D00 !important;
@@ -55,4 +54,72 @@ input::-webkit-inner-spin-button {
     color: #8b8b8b;
     font-size: 0.8rem;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+.chefchatsection {
+    padding: 4rem;
+}
+
+.form-controlarea {
+    width: 30vw;
+    height: 25vh;
+    font-size: 1.1rem;
+}
+
+.textrea {
+    margin-top: 4rem;
+    margin-bottom: 4rem !important;
+}
+
+.contactsubmit {
+    padding: 4rem;
+}
+
+.foam-button {
+    width: 80%;
+}
+
+.foam-div {
+    margin-top: 4rem !important;
+}
+
+.form-controlabel {
+    height: 2.8rem;
+    font-size: 0.9rem;
+}
+}
+
+@media (max-width: 576px) {
+.chefchatsection {
+    padding: 2rem;
+}
+
+.form-controlarea {
+    width: 80vw; 
+    height: 20vh;
+    font-size: 0.9rem;
+}
+
+.textrea {
+    margin-top: 3rem;
+    margin-bottom: 3rem !important;
+}
+
+.contactsubmit {
+    padding: 3rem;
+}
+
+.foam-button {
+    width: 90%;
+}
+
+.foam-div {
+    margin-top: 3rem !important;
+}
+
+.form-controlabel {
+    height: 2.5rem;
+    font-size: 0.8rem;
+}
 }

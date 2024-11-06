@@ -1,20 +1,19 @@
 .space {
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .card {
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 25vw !important;
-margin-top: 10rem;
-border: none !important;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw !important;
+    margin-top: 10rem;
+    border: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -22,10 +21,10 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .joy-body {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
 }
 
 .t {
@@ -33,7 +32,49 @@ padding: 1.5rem;
 }
 
 button {
-display: block;
-margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
-  
+
+@media (min-width: 768px) {
+.card {
+    width: 20vw; 
+    margin-top: 5rem;
+}
+
+.card img {
+    height: 40vh;
+}
+
+.t {
+    font-size: 1.8rem;
+}
+
+.joy-body {
+    padding: 2rem; 
+}
+}
+
+@media (max-width: 576px) {
+.card {
+    width: 80vw !important;
+    margin-top: 3rem; 
+}
+
+.card img {
+    height: 40vh; 
+}
+
+.t {
+    font-size: 1.2rem; 
+}
+
+.joy-body {
+    padding: 1rem; 
+}
+
+button {
+    width: 100%;
+    margin-top: 1rem;
+}
+}

@@ -17,9 +17,9 @@ export default function Landingpage() {
       <section className='landingbody'>
       <div className='landingbuttons'>
             <div class="">
-                <Link to="/event-type" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private chef</button></Link>
-                <Link to="/coming-soon" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private barista</button></Link>
-                <Link to="/coming-soon" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">private mixologist</button></Link>     
+                <Link to="/event-type" style={{ textDecoration: 'none', color: 'black'}}><button class="landing-btn" type="button">private chef</button></Link>
+                <Link to="/coming-soon" style={{ textDecoration: 'none', color: 'black'}}><button class="landing-btn" type="button">private barista</button></Link>
+                <Link to="/coming-soon" style={{ textDecoration: 'none', color: 'black'}}><button class="landing-btn" type="button">private mixologist</button></Link>     
                             
             </div>
       </div>
