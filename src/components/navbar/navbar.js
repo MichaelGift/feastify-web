@@ -7,11 +7,11 @@ export default function Navigation() {
   return (
     <Navbar >
       <Container>
-        <Link to="/" className="navbar-brand d-flex align-items-center">
+        <Link to="/" className="navbar-brand d-flex align-items-center navo">
           <img
             src={logo}
-            width={85}
-            height={50}
+            width={80}
+            height={55}
             alt="feastify"
             className="d-inline-block align-middle"
           />

@@ -18,6 +18,8 @@ import Oven from './components/mischellenous/oven';
 import StoveType from './components/mischellenous/stovetype';
 import ChefChat from './components/mischellenous/chefchat';
 import ContactInfo from './components/mischellenous/contactinfo';
+import ClientLogin from './components/login/clientLogin';
+import ChefLogin from './components/login/ChefLogin';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Landingpage />} />
+          <Route path="/login" element={<ClientLogin/>} />
+          <Route path="/chef-login" element={<ChefLogin/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/event-type" element={<EventType />} />
           <Route path="/service-day" element={<ServiceDay />} />
