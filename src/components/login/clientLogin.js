@@ -21,7 +21,7 @@ export default function ClientLogin() {
           <div className="option">
             <a href="#">
               <img src={facebook} />
-              <span>FaceBook</span>
+              <span>Facebook</span>
             </a>
           </div>
         </div>
