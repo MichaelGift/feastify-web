@@ -23,7 +23,7 @@ export default function ServiceSchedule() {
   };
 
   return (
-    <div>
+    <div className='body-container'>
       <div className='service-header'>
         <h1>I am scheduling service for {month}</h1>
         <h5>Unlock the boxes you don't need</h5>

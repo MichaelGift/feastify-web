@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function DietaryRestrictions() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="body-container flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-2xl font-bold mb-4 mt-5">Any dietary restrictions?</h1>
       <p className="text-xl mb-4" style={{ textAlign: 'center'}}>Not sure ? you can always tell the chef later</p>
 

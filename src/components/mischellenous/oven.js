@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Oven() {
   return (
     <div>
-        <section>
+        <section className='body-container'>
             <h1>Our Kitchen has...</h1>
             <div className='landingbuttons'>
             <div class="">

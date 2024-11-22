@@ -8,7 +8,7 @@ export default function ServiceQuality() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="body-container flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-2xl font-bold mb-4 mt-5">Open to discovering ...</h1>
       <div className="landingbuttons mt-4">
         <div className="d-grid gap-2 col-6 mx-auto mt-5">
