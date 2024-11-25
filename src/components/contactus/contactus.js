@@ -34,7 +34,7 @@ export default function ContactUs() {
                           <div className="dbox w-100 d-flex align-items-start">
                             <div className="text">
                               <p>
-                                <span>Email:</span> <a href="mailto:info@yoursite.com">Hi@thefeastify.com</a>
+                                <span>Email:</span> <a href="mailto:Hi@thefeastify.com">Hi@thefeastify.com</a>
                               </p>
                             </div>
                           </div>
@@ -43,7 +43,7 @@ export default function ContactUs() {
                           <div className="dbox w-100 d-flex align-items-start">
                             <div className="text">
                               <p>
-                                <span>Phone:</span> <a href="tel://1234567920">+ 254711 749 149</a>
+                                <span>Phone:</span> <a href="#">+ 254711 749 149</a>
                               </p>
                             </div>
                           </div>
