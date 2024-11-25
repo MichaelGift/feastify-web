@@ -20,6 +20,8 @@ import ChefChat from './components/mischellenous/chefchat';
 import ContactInfo from './components/mischellenous/contactinfo';
 import ClientLogin from './components/login/clientLogin';
 import ChefLogin from './components/login/ChefLogin';
+import ContactUs from './components/contactus/contactus';
+import Team from './components/team/team';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Landingpage />} />
+          <Route path="/meet-team" element={<Team/>} />
+          <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/login" element={<ClientLogin/>} />
           <Route path="/chef-login" element={<ChefLogin/>} />
           <Route path="/aboutus" element={<AboutUs />} />
