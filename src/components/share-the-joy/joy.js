@@ -7,7 +7,9 @@ export default function Joy() {
   return (
       <section className="space">
         <div class="card" style={{width: '18rem '}}>
-        <img src={food} class="card-img-top" alt="..."/>
+        <img src={food} 
+        // class="card-img-top" 
+        alt="..."/>
         <div class="joy-body">
         <h2 className="t">Donation Package Name</h2>
           <p className="mb-4">Your share experience package includes a team of three

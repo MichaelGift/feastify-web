@@ -2,6 +2,8 @@ import React from 'react';
 import './auth.css';
 import google from "../../assets/logo/google.png"
 import facebook from "../../assets/logo/facebook.png"
+import microsoft from "../../assets/logo/microsoft.png"
+import apple from "../../assets/logo/apple.png"
 
 
 export default function ClientLogin() {
@@ -17,11 +19,22 @@ export default function ClientLogin() {
               <span>Google</span>
             </a>
           </div>
-
           <div className="option">
             <a href="#">
               <img src={facebook} />
               <span>Facebook</span>
+            </a>
+          </div>
+          <div className="option">
+            <a href="#">
+              <img src={apple} />
+              <span>Apple</span>
+            </a>
+          </div>
+          <div className="option">
+            <a href="#">
+              <img src={microsoft} />
+              <span>Microsoft</span>
             </a>
           </div>
         </div>
