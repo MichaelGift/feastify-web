@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import logo from "../../assets/navicon/feastify.png"; // Adjust the path based on your folder structure
+import logo from "../../assets/navicon/feastify.png"; 
 
 export default function Navigation() {
   return (
@@ -22,8 +22,8 @@ export default function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
             <Link to="/" className="nav-link text-dark fw-semibold me-3">Home</Link>
-            <Link to="/" className="nav-link text-dark fw-semibold me-3">Hire A Private Chef</Link>
-            <Link to="/" className="nav-link text-dark fw-semibold me-3">Group Experiences</Link>
+            <Link to="/chef-hire" className="nav-link text-dark fw-semibold me-3">Hire A Private Chef</Link>
+            <Link to="/bookings" className="nav-link text-dark fw-semibold me-3">Group Experiences</Link>
             <Link to="/contact-us" className="nav-link text-dark fw-semibold me-3">Contact Us</Link>
           </Nav>
 

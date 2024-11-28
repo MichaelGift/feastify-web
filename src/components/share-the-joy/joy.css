@@ -16,9 +16,9 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card img {
-    height: 50vh;
-}
+/* .card img {
+    height: 40vh;
+} */
 
 .joy-body {
     display: flex;

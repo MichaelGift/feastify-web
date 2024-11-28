@@ -21,7 +21,7 @@ import ContactInfo from './components/mischellenous/contactinfo';
 import ClientLogin from './components/login/clientLogin';
 import ChefLogin from './components/login/ChefLogin';
 import ContactUs from './components/contactus/contactus';
-import Team from './components/team/team';
+import ExperienceBooking from './components/experiences/experience';
 
 
 function App() {
@@ -30,8 +30,9 @@ function App() {
       <Navbar />
       <div className="App">
         <Routes>
-          <Route path="/" element={<Landingpage />} />
-          <Route path="/meet-team" element={<Team/>} />
+          <Route path="/chef-hire" element={<Landingpage />} />
+          <Route path="/bookings" element={<ExperienceBooking/>} />
+         
           <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/login" element={<ClientLogin/>} />
           <Route path="/chef-login" element={<ChefLogin/>} />

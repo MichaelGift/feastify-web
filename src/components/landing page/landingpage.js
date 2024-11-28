@@ -6,7 +6,7 @@ export default function Landingpage() {
   return (
     <div className='landingpage'>
         <section className="landinghead py-4">
-            <h1 className="display-2 text-center">
+            <h1 className="display-2 text-center" style={{color: 'white'}}>
             <span>Hello,</span>
             <br />
             what would you like to
