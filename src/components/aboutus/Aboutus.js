@@ -161,7 +161,7 @@ export default function AboutUs() {
             <h4>⭐ Executive Chefs</h4>
             <p>Work with top-tier chefs globally.</p>
           </div>
-          <div className="value-card p-4 rounded text-centerd">
+          <div className="value-card p-4 rounded text-center">
             <h4>⭐ Price Transparency</h4>
             <p>Fair and clear pricing with no hidden fees.</p>
           </div>
