@@ -1,0 +1,241 @@
+.checkout-container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  color: #333;
+}
+
+.checkout-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.checkout-content {
+  display: flex;
+  gap: 20px;
+}
+
+.left-section {
+  flex: 2;
+}
+
+.location-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.duration {
+  color: orange;
+  font-size: 0.9rem;
+}
+
+.images {
+  display: flex;
+  gap: 10px;
+}
+
+.large-image {
+  flex: 2;
+  height: 200px;
+  background: #ccc;
+  border-radius: 8px;
+}
+
+.small-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.small-image {
+  height: 95px;
+  background: #ccc;
+  border-radius: 8px;
+}
+
+.details {
+  margin: 20px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.itinerary-title {
+  font-size: 1.2rem;
+}
+
+.right-section {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.price-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.counter {
+  margin-bottom: 20px;
+}
+
+.counter > div {
+  margin-bottom: 10px;
+}
+
+.counter p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.counter-controls button {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.date-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.date-inputs input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cost-breakdown {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.cost-breakdown p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  font-size: 1.5rem;
+  color: orange;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reserve-btn {
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.save-btn {
+  background: transparent;
+  color: orange;
+  border: 1px solid orange;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .checkout-content {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-title {
+    font-size: 1.8rem;
+  }
+
+  .large-image {
+    height: 180px;
+  }
+
+  .small-image {
+    height: 80px;
+  }
+
+  .price-summary h4,
+  .price-summary h3 {
+    font-size: 1rem;
+  }
+
+  .buttons button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .location-price h2 {
+    font-size: 1.2rem;
+  }
+
+  .details {
+    font-size: 0.8rem;
+  }
+
+  .itinerary-title {
+    font-size: 1rem;
+  }
+
+  .price-summary h4,
+  .price-summary h3 {
+    font-size: 0.9rem;
+  }
+
+  .counter-controls button {
+    padding: 5px;
+  }
+
+  .buttons {
+    gap: 5px;
+  }
+
+  .reserve-btn,
+  .save-btn {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .date-inputs input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
