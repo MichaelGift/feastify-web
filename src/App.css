@@ -47,17 +47,11 @@
 .landinghead {
   background-color: black;
   color: white;
-  width: 100vw !important;
   height: 50vh;
 }
 
 .landinghead span {
   color: #FB9D00; 
-}
-
-.landingbody {
-  width: 100vw !important;
-  height: 40vh;
 }
 
 .landingbuttons {
