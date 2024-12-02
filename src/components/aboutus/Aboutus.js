@@ -14,7 +14,7 @@ export default function AboutUs() {
   const foodImages = [food1, food2, food3, food4, food5, food6, food7];
   return (
     <div className="container p-4">
-      <header className="abtheader">
+      <header className="abtheader mt-5">
         <p className='headerp'>Hi, I am <br/><span> The Feastify</span></p>
         <p className="text-xl text-gray-600 leading-relaxed">
           Your gateway to exceptional culinary experiences. Born from a passion to bring luxury hotel dining to your doorstep, we connect you with top-tier chefs affiliated with renowned hotel chains. Additionally, we curate unforgettable events, making every moment a masterpiece. Join us on a journey where every meal becomes a celebration, and every event is a testament to extraordinary experiences.
@@ -41,8 +41,8 @@ export default function AboutUs() {
                 <Link to="/event-type" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Access Our Services</button></Link>                           
             </div>
       </div>
-      <section className="image-gallery">
-        <div className="flex">
+      <section className="image-gallery mt-5">
+        <div className="flex d-flex justify-content-center flex-wrap">
           {foodImages.map((foodImage, index) => (
             <div className="card" key={index}>
               <img src={foodImage} className="card-img-top" alt={`Food ${index + 1}`} />
@@ -98,44 +98,44 @@ export default function AboutUs() {
             </div>
       </div>      
       <div className="chef-experience">
-      <section className="hero-section">
+      <section className="hero-section d-flex flex-wrap justify-content-between mt-5 p-3 mb-5">
         <div className="hero-content">
-          <h1>Accessing Private Chefs And Group Experiences Globally Made Easy</h1>
-          <p>
+          <h1 style={{ fontSize:"2.5rem"}}>Accessing Private Chefs And Group Experiences Globally Made Easy</h1>
+          <p style={{ fontSize: '1rem'}}>
             Born from a passion to bring luxury hotel dining to your doorstep, 
             we connect you with top-tier chefs and curate bespoke group trips.
           </p>
           <button className="btn-primary">Experience Now</button>
-          <div className="reviews">
+          <div className="reviews mt-5">
             ⭐⭐⭐⭐⭐ <span>8.6/10 from 65+ reviews</span>
           </div>
         </div>
-        <div className="hero-stats">
-          <div className="stat-box">
-            <h2>1k+</h2>
+        <div className="hero-stats d-flex flex-column align-items-center">
+          <div className="stat-box p-3 text-center">
+            <h2 style={{fontSize: '1.8rem'}}>1k+</h2>
             <p>Private chefs</p>
           </div>
-          <div className="stat-box">
-            <h2>120+</h2>
+          <div className="stat-box p-3 text-center m-0">
+            <h2 style={{fontSize: '1.8rem'}}>120+</h2>
             <p>Completed trips</p>
           </div>
-          <div className="stat-images">
-            <img src="images/chef1.jpg" alt="Chef" />
-            <img src="images/group.jpg" alt="Group Experience" />
+          <div className="stat-images" style={{}}>
+            {/* <img src="https://images.unsplash.com/photo-1654922207993-2952fec328ae?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chef" />
+            <img src="images/group.jpg" alt="Group Experience" /> */}
           </div>
         </div>
       </section>
-      <section className="testimonials-section">
-        <h2>Don’t just listen to what they say, try experience</h2>
+      <section className="testimonials-section p-5">
+        <h2 className='' style={{fontSize: '1.8rem'}}>Don’t just listen to what they say, try experience</h2>
         <p className="testimonial-header">50+ Happy feastify Users</p>
-        <div className="testimonial-container">
-          <div className="testimonial-card">
+        <div className="testimonial-container d-flex flex-wrap justify-content-center">
+          <div className="testimonial-card p-4 text-left rounded">
             <img src="images/user1.jpg" alt="User" />
             <h4>Jenny Wilson</h4>
             <p>⭐⭐⭐⭐⭐ Group Experience</p>
             <p>"We love the feastify! Our designers were using it for their projects, so we already know what kind of design they want."</p>
           </div>
-          <div className="testimonial-card">
+          <div className="testimonial-card p-4 text-left rounded">
             <img src="images/user2.jpg" alt="User" />
             <h4>Devon Lane</h4>
             <p>⭐⭐⭐⭐⭐ Chef</p>
@@ -143,42 +143,42 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-      <section className="about-section">
-        <h2>About Us</h2>
-        <p>
+      <section className="about-section p-5">
+        <h2 className='text-center' style={{fontSize: '1.8rem'}}>About Us</h2>
+        <p className='text-center'>
           We Connect Private Chefs With Hosts and Curate Unique Group Experiences Globally.
         </p>
-        <p className="about-text">
+        <p className="about-text text-center">
           Remove all the friction that stands in your way when planning parties at home, 
           at work, or when you and your group of friends want to go on a staycation.
         </p>
       </section>
-      <section className="values-section">
+      <section className="values-section p-4 text-center">
         <h2>Our Values</h2>
         <h3>We are friendly to your wallet</h3>
-        <div className="values-container">
-          <div className="value-card">
+        <div className="values-container d-flex flex-wrap justify-content-center">
+          <div className="value-card p-4 rounded text-center">
             <h4>⭐ Executive Chefs</h4>
             <p>Work with top-tier chefs globally.</p>
           </div>
-          <div className="value-card">
+          <div className="value-card p-4 rounded text-centerd">
             <h4>⭐ Price Transparency</h4>
             <p>Fair and clear pricing with no hidden fees.</p>
           </div>
-          <div className="value-card">
+          <div className="value-card p-4 rounded text-center">
             <h4>⭐ Unique Trips</h4>
             <p>Customized, memorable group experiences.</p>
           </div>
-          <div className="value-card">
+          <div className="value-card p-4 rounded text-center">
             <h4>⭐ 24/7 Support</h4>
             <p>We’re here for you anytime, anywhere.</p>
           </div>
         </div>
       </section>
-      <section className="team-section">
+      <section className="team-section text-center p-4">
         <h2>Meet the architects of joy</h2>
         <p>Each member of our team ensures that every experience leaves a lasting memory.</p>
-        <div className="team-container">
+        <div className="team-container d-flex flex-wrap justify-content-center">
           <div className="team-member">
             <img src="images/team1.jpg" alt="Team Member 1" />
           </div>
@@ -197,19 +197,19 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="faq-section">
+      <section className="faq-section text-center p-5">
         <h2>Frequently Asked Questions</h2>
-        <div className="faq-container">
-          <div className="faq-item">
-            <h4>Where can I order?</h4>
+        <div className="faq-container m-0 text-left">
+          <div className="faq-item p-4 mb-4 rounded">
+            <h4 className='m-34'>Where can I order?</h4>
             <p>You can order through our website or mobile app.</p>
           </div>
-          <div className="faq-item">
-            <h4>How do I add a new chef?</h4>
+          <div className="faq-item p-4 mb-4 rounded">
+            <h4 className='m-34'>How do I add a new chef?</h4>
             <p>Reach out to us through the support section.</p>
           </div>
-          <div className="faq-item">
-            <h4>Do you have international chefs?</h4>
+          <div className="faq-item p-4 mb-4 rounded">
+            <h4 className='m-34'>Do you have international chefs?</h4>
             <p>Yes, we work with chefs globally to suit every palate.</p>
           </div>
         </div>
