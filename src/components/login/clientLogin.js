@@ -31,7 +31,6 @@ export default function ClientLogin() {
       });
   };
 
-  // Handle Google OAuth login
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
