@@ -26,7 +26,7 @@ import ChefProfile from './components/chefsprofile/chefprofile';
 import Checkout from './components/checkout/checkout';
 
 
-
+export const BASE_URL = 'http://localhost:3000/api';
 function App() {
   return (
     <>
