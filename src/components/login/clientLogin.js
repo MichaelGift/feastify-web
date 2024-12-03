@@ -1,33 +1,37 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { signInWithPopup, signInWithEmailAndPassword, getAuth, sendPasswordResetEmail } from 'firebase/auth';
+import { auth, googleProvider } from '../../firebase';
 import './auth.css';
 import google from "../../assets/logo/google.png";
 import facebook from "../../assets/logo/facebook.png";
 import microsoft from "../../assets/logo/microsoft.png";
 import apple from "../../assets/logo/apple.png";
-import { auth, googleProvider } from '../../firebase'; 
-import { signInWithPopup } from 'firebase/auth';
 
 export default function ClientLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
+  const [resetEmail, setResetEmail] = useState(''); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post('http://localhost:3000/dev/simulate-login', {
-        email,
-        password,
-      })
-      .then((response) => {
-        console.log('Login successful:', response.data);
-        setLoginStatus('Login successful!');
+    signInWithEmailAndPassword(getAuth(), email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        if (!user.emailVerified) {
+          alert ('Please verify you email to login');
+          return;
+        }
+
+        console.log('Login successful:', user);
+        console.log(user.accessToken)
+        setLoginStatus(`Welcome, ${user.firstName || 'User'}!`);
       })
       .catch((error) => {
-        console.error('Login failed:', error);
-        setLoginStatus('Login failed. Please try again.');
+        console.error('Login failed:', error.message);
+        setLoginStatus('Invalid email or password. Please try again.');
       });
   };
 
@@ -40,6 +44,22 @@ export default function ClientLogin() {
     } catch (error) {
       console.error('Error during Google login:', error.message);
       setLoginStatus('Google login failed. Please try again.');
+    }
+  };
+
+  const handlePasswordReset = () => {
+    if (resetEmail) {
+      sendPasswordResetEmail(auth, resetEmail)
+        .then(() => {
+          alert('Password reset email sent!');
+          setResetEmail(''); // Clear the email field
+        })
+        .catch((error) => {
+          console.error('Error sending password reset email:', error.message);
+          alert('Failed to send password reset email. Please try again.');
+        });
+    } else {
+      alert('Please enter your email address.');
     }
   };
 
@@ -94,9 +114,9 @@ export default function ClientLogin() {
         </div>
 
         <div className="input_box position-relative">
-          <div className="password_title d-flex justify-content-between text-center">
+        <div className="password_title d-flex justify-content-between text-center">
             <label className='d-block fw-normal mb-2'  htmlFor="password">Password</label>
-            <a href="#">Forgot Password?</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setResetEmail(email); handlePasswordReset(); }}>Forgot Password?</a>
           </div>
           <input
             className=' h-100 d-inline-block rounded border-1 p-1 mb-4 '
