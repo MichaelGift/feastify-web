@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './auth.css';
-import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import {getAuth, createUserWithEmailAndPassword,  sendEmailVerification,  updateProfile  } from "firebase/auth";
 import {BASE_URL} from "../../App";
 
-export default function ChefLogin() {
+
+export default function ChefRegister() {
+const today = new Date();
+const minAgeDate = new Date(today.setFullYear(today.getFullYear() -18))
+const minDate = minAgeDate.toISOString().split('T')[0];
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -35,8 +41,6 @@ export default function ChefLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log('Clicked')
     
     const chefData = {
       first_name: formData.firstName,
@@ -60,56 +64,67 @@ export default function ChefLogin() {
       }
     };
 
-
-    // Assign role to the user
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+  
     try {
-      const userCreds = await createUserWithEmailAndPassword(getAuth(), "simiyugift@outlook.com", "12345678");
-      const uid = userCreds.user.uid;
-      const idToken = await userCreds.user.getIdToken();
-
-      const response = await fetch(`${BASE_URL}/auth/assign-role`, {
+      // Register user in Firebase
+      const auth = getAuth();
+      const userCreds = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      const user = userCreds.user;
+      
+      await updateProfile(user, {
+        displayName: `${formData.firstName} ${formData.lastName}`
+      });
+      // Send email verification
+      await sendEmailVerification(user);
+      alert('A verification email has been sent. Please check your inbox and verify your email before logging in.');
+  
+      // Assign role to the user in your backend
+      const idToken = await user.getIdToken();
+      const roleResponse = await fetch(`${BASE_URL}/auth/assign-role`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${idToken}`
         },
         body: JSON.stringify({
-          uid: uid,
+          uid: user.uid,
           role: 'chef',
         })
-      })
-
-      if (response.ok) {
-        console.log('Role assigned successfully');
-      } else {
-        console.error('Role assignment failed');
+      });
+  
+      if (!roleResponse.ok) {
+        throw new Error('Role assignment failed');
       }
-
-      // Get a new token
-      const newToken = await userCreds.user.getIdToken(true);
-
-      // Register the chef
-      const chefRegister = await fetch(`${BASE_URL}/chefs/create`, {
+      
+      const newToken = await user.getIdToken(true) 
+      // Register the chef data in your backend
+      const chefRegisterResponse = await fetch(`${BASE_URL}/chefs/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${newToken}`
         },
-        body: JSON.stringify(chefData)
-      })
-
-      if (chefRegister.ok) {
-        alert('Chef registered successfully');
-        console.log('Chef registered successfully');
+        body: JSON.stringify({
+          ...chefData
+        })
+      });
+  
+      if (chefRegisterResponse.ok) {
+        alert('Chef registration successful! Please verify your email to activate your account.');
+        navigate('/login');
       } else {
-        alert('Chef registration failed');
-        console.error('Chef registration failed');
+        throw new Error('Chef registration failed');
       }
-
+  
     } catch (error) {
-      alert('An error occurred while submitting the form.');
-      console.error(error);
+      console.error('Error during registration:', error);
+      alert(`Registration failed: ${error.message}`);
     }
+
   };
 
   return (
@@ -192,6 +207,7 @@ export default function ChefLogin() {
                 name="birthDate"
                 value={formData.birthDate}
                 onChange={handleChange}
+                max={minDate}
                 required
             />
           </div>
@@ -244,10 +260,60 @@ export default function ChefLogin() {
                 }
               }>
                 <option hidden>Country</option>
-                <option>America</option>
-                <option>Japan</option>
-                <option>India</option>
-                <option>Nepal</option>
+                <option>Algeria</option>
+                <option>Angola</option>
+                <option>Benin</option>
+                <option>Botswana</option>
+                <option>Burkina Faso</option>
+                <option>Burundi</option>
+                <option>Cape Verde</option>
+                <option>Cameroon</option>
+                <option>Central African Republic</option>
+                <option>Chad</option>
+                <option>Comoros</option>
+                <option>Democratic Republic of the Congo</option>
+                <option>Republic of the Congo</option>
+                <option>Djibouti</option>
+                <option>Egypt</option>
+                <option>Equatorial Guinea</option>
+                <option>Eritrea</option>
+                <option>Eswatini</option>
+                <option>Ethiopia</option>
+                <option>Gabon</option>
+                <option>Gambia</option>
+                <option>Ghana</option>
+                <option>Guinea</option>
+                <option>Guinea-Bissau</option>
+                <option>Ivory Coast</option>
+                <option>Kenya</option>
+                <option>Lesotho</option>
+                <option>Liberia</option>
+                <option>Libya</option>
+                <option>Madagascar</option>
+                <option>Malawi</option>
+                <option>Mali</option>
+                <option>Mauritania</option>
+                <option>Mauritius</option>
+                <option>Morocco</option>
+                <option>Mozambique</option>
+                <option>Namibia</option>
+                <option>Niger</option>
+                <option>Nigeria</option>
+                <option>Rwanda</option>
+                <option>São Tomé and Príncipe</option>
+                <option>Senegal</option>
+                <option>Seychelles</option>
+                <option>Sierra Leone</option>
+                <option>Somalia</option>
+                <option>South Africa</option>
+                <option>South Sudan</option>
+                <option>Sudan</option>
+                <option>Tanzania</option>
+                <option>Togo</option>
+                <option>Tunisia</option>
+                <option>Uganda</option>
+                <option>Zambia</option>
+                <option>Zimbabwe</option>
               </select>
             </div>
             <input

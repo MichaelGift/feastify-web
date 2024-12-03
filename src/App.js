@@ -19,7 +19,7 @@ import StoveType from './components/mischellenous/stovetype';
 import ChefChat from './components/mischellenous/chefchat';
 import ContactInfo from './components/mischellenous/contactinfo';
 import ClientLogin from './components/login/clientLogin';
-import ChefLogin from './components/login/ChefLogin';
+import ChefRegister from './components/login/ChefRegister';
 import ContactUs from './components/contactus/contactus';
 import ExperienceBooking from './components/experiences/experience';
 import ChefProfile from './components/chefsprofile/chefprofile';
@@ -38,7 +38,7 @@ function App() {
           <Route path="/chef-profile" element={<ChefProfile/>} />         
           <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/login" element={<ClientLogin/>} />
-          <Route path="/chef-login" element={<ChefLogin/>} />
+          <Route path="/chef-register" element={<ChefRegister/>} />
           <Route path="/checkout" element={<Checkout/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/event-type" element={<EventType />} />

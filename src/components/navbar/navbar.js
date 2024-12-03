@@ -27,7 +27,7 @@ export default function Navigation() {
             <Link to="/contact-us" className="nav-link text-dark fw-semibold me-3">Contact Us</Link>
           </Nav>
 
-          <Link to="/chef-login">
+          <Link to="/chef-register">
             <Button className="btn-warning text-white fw-semibold px-4 py-2">
               Chefs Register
             </Button>
