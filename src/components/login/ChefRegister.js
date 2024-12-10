@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './auth.css';
 import {getAuth, createUserWithEmailAndPassword,  sendEmailVerification,  updateProfile  } from "firebase/auth";
 import {BASE_URL} from "../../App";
@@ -62,7 +63,10 @@ const minDate = minAgeDate.toISOString().split('T')[0];
         facebook: formData.facebook,
         twitter: formData.twitter
       }
+      
     };
+    console.log(chefData)
+    
 
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match.");
@@ -70,13 +74,13 @@ const minDate = minAgeDate.toISOString().split('T')[0];
     }
   
     try {
-      // Register user in Firebase
       const auth = getAuth();
       const userCreds = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCreds.user;
       
       await updateProfile(user, {
-        displayName: `${formData.firstName} ${formData.lastName}`
+        displayName: `${formData.firstName} ${formData.lastName}`,
+        phoneNumber: `${formData.phone}`
       });
       // Send email verification
       await sendEmailVerification(user);
@@ -115,7 +119,7 @@ const minDate = minAgeDate.toISOString().split('T')[0];
   
       if (chefRegisterResponse.ok) {
         alert('Chef registration successful! Please verify your email to activate your account.');
-        navigate('/login');
+        navigate('/chef-login');
       } else {
         throw new Error('Chef registration failed');
       }
@@ -128,7 +132,7 @@ const minDate = minAgeDate.toISOString().split('T')[0];
   };
 
   return (
-    <section className="coontainer mt-5 mb-5 rounded p-3 m-auto w-100">
+    <section className="coontainer   rounded p-3 w-100" >
     <header className='text-center' style={{ fontWeight: '550', fontSize: '1.5rem'}}>Registration Form</header>
       <form onSubmit={handleSubmit} className="form mt-5">
         <div className="input-box mt-4 ">
@@ -396,6 +400,7 @@ const minDate = minAgeDate.toISOString().split('T')[0];
         </div>
         <button className='border-0  w-100 p-3 mt-3 h-75 d-inline-block rounded'>Submit</button>
       </form>
+      <p className='mt-5 text-center'><Link to="/login">Already a user? Sign in</Link></p>
     </section>
   );
 }

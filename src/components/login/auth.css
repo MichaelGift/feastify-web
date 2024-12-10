@@ -93,6 +93,9 @@ form button {
 
 .coontainer {
 max-width: 435px;
+margin: 0 auto;
+margin-top: 5rem;
+margin-bottom: 5rem;
 }
 
 .coontainer header {
