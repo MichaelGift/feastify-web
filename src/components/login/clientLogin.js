@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { signInWithPopup, signInWithEmailAndPassword, getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { auth, googleProvider } from '../../firebase';
 import './auth.css';
@@ -7,7 +9,8 @@ import facebook from "../../assets/logo/facebook.png";
 import microsoft from "../../assets/logo/microsoft.png";
 import apple from "../../assets/logo/apple.png";
 
-export default function ClientLogin() {
+export default function ClientLogin({ setAuthToken }) {
+  const navigate =  useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
@@ -26,8 +29,10 @@ export default function ClientLogin() {
         }
 
         console.log('Login successful:', user);
-        console.log(user.accessToken)
+        sessionStorage.setItem('Token', user.accessToken)
+        setAuthToken(user.accessToken);
         setLoginStatus(`Welcome, ${user.firstName || 'User'}!`);
+        navigate('/');
       })
       .catch((error) => {
         console.error('Login failed:', error.message);
@@ -39,8 +44,10 @@ export default function ClientLogin() {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
-      console.log('User info:', user);
+      sessionStorage.setItem('Token', user.accessToken)
+      setAuthToken(user.accessToken);
       alert(`Welcome, ${user.displayName}!`);
+      navigate('/');
     } catch (error) {
       console.error('Error during Google login:', error.message);
       setLoginStatus('Google login failed. Please try again.');
@@ -52,7 +59,7 @@ export default function ClientLogin() {
       sendPasswordResetEmail(auth, resetEmail)
         .then(() => {
           alert('Password reset email sent!');
-          setResetEmail(''); // Clear the email field
+          setResetEmail('');
         })
         .catch((error) => {
           console.error('Error sending password reset email:', error.message);
@@ -66,7 +73,7 @@ export default function ClientLogin() {
   return (
     <div className="login_form p-5 m-auto ">
       <form onSubmit={handleSubmit}>
-        <h3>Log in with</h3>
+        <h3>Log / Signup in with</h3>
 
         <div className="login_option d-flex flex-wrap">
           <div className="option" onClick={handleGoogleLogin}>
@@ -132,11 +139,15 @@ export default function ClientLogin() {
 
         <button className=' w-75 h-100 d-inline-block mb-4 rounded border-0 ' type="submit">Log In</button>
 
-        {loginStatus && <p className="status_message">{loginStatus}</p>}
+        {/* {loginStatus && <p className="status_message">{loginStatus}</p>}
         <p className="sign_up">
-          Don't have an account? <a href="#">Sign up</a>
-        </p>
+          Don't have an account? <Link to="/chef-register">Sign up</Link>
+        </p> */}
       </form>
     </div>
   );
 }
+
+
+
+

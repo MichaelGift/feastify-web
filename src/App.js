@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/navbar/navbar';
 import Landingpage from './components/landing page/landingpage';
 import EventType from './components/events/events';
@@ -24,20 +25,69 @@ import ContactUs from './components/contactus/contactus';
 import ExperienceBooking from './components/experiences/experience';
 import ChefProfile from './components/chefsprofile/chefprofile';
 import Checkout from './components/checkout/checkout';
-
+import ChefLogin from './components/login/chefLogin';
 
 export const BASE_URL = 'http://localhost:3000/api';
+
 function App() {
+  const [authToken, setAuthToken] = useState(sessionStorage.getItem('Token'));
+  const logoutTimerRef = useRef(null);
+
+  const logoutUser = () => {
+    sessionStorage.removeItem('Token');
+    setAuthToken(null);
+    if (logoutTimerRef.current) clearTimeout(logoutTimerRef.current); 
+    alert('You have been logged out due to inactivity');
+  };
+
+  const resetLogoutTimer = () => {
+    if (logoutTimerRef.current) {
+      clearTimeout(logoutTimerRef.current);
+    }
+    logoutTimerRef.current = setTimeout(logoutUser, 30 * 60 * 1000); 
+  };
+
+  useEffect(() => {
+    const handleUserActivity = () => {
+      resetLogoutTimer();
+    };
+
+    window.addEventListener('mousemove', handleUserActivity);
+    window.addEventListener('keypress', handleUserActivity);
+    window.addEventListener('click', handleUserActivity);
+    window.addEventListener('scroll', handleUserActivity);
+
+    resetLogoutTimer();
+
+    return () => {
+      window.removeEventListener('mousemove', handleUserActivity);
+      window.removeEventListener('keypress', handleUserActivity);
+      window.removeEventListener('click', handleUserActivity);
+      window.removeEventListener('scroll', handleUserActivity);
+      if (logoutTimerRef.current) {
+        clearTimeout(logoutTimerRef.current);
+      }
+    };
+  }, []);
+
+  const PrivateRoute = ({ element: Element }) => {
+    return authToken ? <Element /> : <Navigate to="/login" />;
+   
+  };
+
+
+
   return (
     <>
       <Navbar />
       <div className="App">
         <Routes>
           <Route path="/chef-hire" element={<Landingpage />} />
-          <Route path="/bookings" element={<ExperienceBooking/>} />
-          <Route path="/chef-profile" element={<ChefProfile/>} />         
+          <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />
+          <Route path="/chef-profile" element={<PrivateRoute element={ChefProfile} />} />      
           <Route path="/contact-us" element={<ContactUs/>} />
-          <Route path="/login" element={<ClientLogin/>} />
+          <Route path="/login" element={<ClientLogin setAuthToken={setAuthToken} />} />
+          <Route path="/chef-login" element={<ChefLogin setAuthToken={setAuthToken} />} />
           <Route path="/chef-register" element={<ChefRegister/>} />
           <Route path="/checkout" element={<Checkout/>} />
           <Route path="/aboutus" element={<AboutUs />} />
