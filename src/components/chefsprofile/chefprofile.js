@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { jwtDecode }from "jwt-decode"; 
 import "./chefprofile.css";
+import { BASE_URL } from "../../App";
 
 const ChefProfile = () => {
   const [isEditing, setIsEditing] = useState({
@@ -11,29 +11,36 @@ const ChefProfile = () => {
   });
 
   const [userInfo, setUserInfo] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    about: "",
+    name: "Loading...",
+    email: "Loading...",
+    phone: "Loading...",
+    about: "Loading...",
   });
 
   useEffect(() => {
-    // Retrieve token from sessionStorage
     const token = sessionStorage.getItem("Token");
 
     if (token) {
-      try {
-        // Decode token and extract user info
-        const decoded = jwtDecode(token);
-        setUserInfo({
-          name: decoded.name || "Unknown User",   
-          email: decoded.email || "No email provided",
-          phone: decoded.phone || "No phone number",
-          about: decoded.about || "About section not available",
-        });
-      } catch (error) {
-        console.error("Invalid token:", error);
-      }
+      fetch(`${BASE_URL}/chefs/find-by-uid`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error("Failed to fetch user data");
+          return response.json();
+        })
+        .then((data) => {
+          setUserInfo({
+            name: `${data.first_name || ""} ${data.last_name || ""}`.trim() || "Your Name",
+            email: data.email || "yourname@example.com",
+            phone: data.phone || "123-456-7890",
+            about: data.about || "Tell us about yourself.",
+          });
+        })
+        .catch((error) => console.error("Error fetching user data:", error));
     } else {
       console.error("No token found. User not logged in.");
     }
@@ -48,8 +55,27 @@ const ChefProfile = () => {
   };
 
   const handleSave = (field) => {
-    setIsEditing((prev) => ({ ...prev, [field]: false }));
-    // Optionally, send updated data to your backend here.
+    const token = sessionStorage.getItem("Token");
+
+    fetch(`${BASE_URL}/chefs/update-by-uid`, {
+      method: "PUT",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ 
+      [field]: userInfo[field] 
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Failed to update user data");
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Profile updated:", data);
+        setIsEditing((prev) => ({ ...prev, [field]: false }));
+      })
+      .catch((error) => console.error("Error updating profile:", error));
   };
 
   return (
@@ -64,97 +90,29 @@ const ChefProfile = () => {
           <button className="upload-photo">Upload Photo</button>
         </div>
         <div className="profile-info">
-          {/* Name Section */}
-          <div className="info-section">
-            <p>Your Name</p>
-            <div className="info-value">
-              {isEditing.name ? (
-                <>
-                  <input
-                    type="text"
-                    value={userInfo.name}
-                    onChange={(e) => handleInputChange(e, "name")}
-                  />
-                  <button onClick={() => handleSave("name")}>Save</button>
-                </>
-              ) : (
-                <>
-                  <span>{userInfo.name}</span>
-                  <button onClick={() => handleEditToggle("name")}>Edit</button>
-                </>
-              )}
+          {["name", "email", "phone", "about"].map((field) => (
+            <div key={field} className="info-section">
+              <p>{field.charAt(0).toUpperCase() + field.slice(1)}</p>
+              <div className="info-value">
+                {isEditing[field] ? (
+                  <>
+                    <input
+                      type={field === "email" ? "email" : "text"}
+                      value={userInfo[field]}
+                      onChange={(e) => handleInputChange(e, field)}
+                    />
+                    <button onClick={() => handleSave(field)}>Save</button>
+                  </>
+                ) : (
+                  <>
+                    <span>{userInfo[field]}</span>
+                    <button onClick={() => handleEditToggle(field)}>Edit</button>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-
-          {/* Email Section */}
-          <div className="info-section">
-            <p>Email</p>
-            <div className="info-value">
-              {isEditing.email ? (
-                <>
-                  <input
-                    type="email"
-                    value={userInfo.email}
-                    onChange={(e) => handleInputChange(e, "email")}
-                  />
-                  <button onClick={() => handleSave("email")}>Save</button>
-                </>
-              ) : (
-                <>
-                  <span>{userInfo.email}</span>
-                  <button onClick={() => handleEditToggle("email")}>Edit</button>
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* Phone Section */}
-          <div className="info-section">
-            <p>Phone Number</p>
-            <div className="info-value">
-              {isEditing.phone ? (
-                <>
-                  <input
-                    type="text"
-                    value={userInfo.phone}
-                    onChange={(e) => handleInputChange(e, "phone")}
-                  />
-                  <button onClick={() => handleSave("phone")}>Save</button>
-                </>
-              ) : (
-                <>
-                  <span>{userInfo.phone}</span>
-                  <button onClick={() => handleEditToggle("phone")}>Edit</button>
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* About Section */}
-          <div className="info-section">
-            <p>About You</p>
-            <div className="info-value">
-              {isEditing.about ? (
-                <>
-                  <textarea
-                    value={userInfo.about}
-                    onChange={(e) => handleInputChange(e, "about")}
-                  />
-                  <button onClick={() => handleSave("about")}>Save</button>
-                </>
-              ) : (
-                <>
-                  <span>{userInfo.about}</span>
-                  <button onClick={() => handleEditToggle("about")}>Edit</button>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Profile Stats Section */}
-      <div className="profile-stats">
+          ))}
+          <div className="profile-stats">
         <div className="stats-card">
           <p>Services Completed</p>
           <div className="stats-value">
@@ -184,6 +142,8 @@ const ChefProfile = () => {
           </div>
           <a href="#">See all reviews →</a>
         </div>
+        </div>
+      </div>
       </div>
     </div>
   );

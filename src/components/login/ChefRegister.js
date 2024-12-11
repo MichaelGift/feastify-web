@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Modal, Button } from 'react-bootstrap';
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from 'firebase/auth';
+import { BASE_URL } from "../../App";
 import { Link } from 'react-router-dom';
-import './auth.css';
-import {getAuth, createUserWithEmailAndPassword,  sendEmailVerification,  updateProfile  } from "firebase/auth";
-import {BASE_URL} from "../../App";
-
 
 export default function ChefRegister() {
-const today = new Date();
-const minAgeDate = new Date(today.setFullYear(today.getFullYear() -18))
-const minDate = minAgeDate.toISOString().split('T')[0];
+  const today = new Date();
+  const minAgeDate = new Date(today.setFullYear(today.getFullYear() - 18));
+  const minDate = minAgeDate.toISOString().split('T')[0];
   const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -31,6 +31,22 @@ const minDate = minAgeDate.toISOString().split('T')[0];
     pinterest: '',
     portfolio: ''
   });
+
+  const [modal, setModal] = useState({
+    show: false,
+    title: '',
+    message: '',
+  });
+
+  const handleCloseModal = () => {
+    setTimeout(() => {
+      setModal({ ...modal, show: false });
+    }, 2000);
+  };
+
+  const showModal = (title, message) => {
+    setModal({ show: true, title, message });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,17 +75,14 @@ const minDate = minAgeDate.toISOString().split('T')[0];
       type_of_chef: "personal", 
       criminal_record: formData.criminalRecord === 'Yes',
       socials: {
-        instagram: formData.instagram,
-        facebook: formData.facebook,
-        twitter: formData.twitter
+        linkedin: formData.linkedin,
+        pinterest: formData.pinterest,
+        portfolio: formData.portfolio
       }
-      
     };
-    console.log(chefData)
     
-
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match.");
+      showModal('Password Mismatch', 'Passwords do not match.');
       return;
     }
   
@@ -80,13 +93,12 @@ const minDate = minAgeDate.toISOString().split('T')[0];
       
       await updateProfile(user, {
         displayName: `${formData.firstName} ${formData.lastName}`,
-        phoneNumber: `${formData.phone}`
+        phoneNumber: formData.phone
       });
-      // Send email verification
+      
       await sendEmailVerification(user);
-      alert('A verification email has been sent. Please check your inbox and verify your email before logging in.');
+      showModal('Verification Email Sent', 'Please check your inbox and verify your email before logging in.');
   
-      // Assign role to the user in your backend
       const idToken = await user.getIdToken();
       const roleResponse = await fetch(`${BASE_URL}/auth/assign-role`, {
         method: 'POST',
@@ -104,34 +116,30 @@ const minDate = minAgeDate.toISOString().split('T')[0];
         throw new Error('Role assignment failed');
       }
       
-      const newToken = await user.getIdToken(true) 
-      // Register the chef data in your backend
+      const newToken = await user.getIdToken(true); 
       const chefRegisterResponse = await fetch(`${BASE_URL}/chefs/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${newToken}`
         },
-        body: JSON.stringify({
-          ...chefData
-        })
+        body: JSON.stringify({ ...chefData })
       });
   
       if (chefRegisterResponse.ok) {
-        alert('Chef registration successful! Please verify your email to activate your account.');
-        navigate('/chef-login');
+        showModal('Registration Successful', 'Please verify your email to activate your account.');
       } else {
         throw new Error('Chef registration failed');
       }
   
     } catch (error) {
       console.error('Error during registration:', error);
-      alert(`Registration failed: ${error.message}`);
+      showModal('Registration Error', error.message);
     }
-
   };
 
   return (
+    <>
     <section className="coontainer   rounded p-3 w-100" >
     <header className='text-center' style={{ fontWeight: '550', fontSize: '1.5rem'}}>Registration Form</header>
       <form onSubmit={handleSubmit} className="form mt-5">
@@ -402,5 +410,17 @@ const minDate = minAgeDate.toISOString().split('T')[0];
       </form>
       <p className='mt-5 text-center'><Link to="/login">Already a user? Sign in</Link></p>
     </section>
+     <Modal show={modal.show} onHide={handleCloseModal}>
+     <Modal.Header closeButton>
+       <Modal.Title>{modal.title}</Modal.Title>
+     </Modal.Header>
+     <Modal.Body>{modal.message}</Modal.Body>
+     <Modal.Footer>
+       <Button variant="secondary" onClick={handleCloseModal}>
+         Close
+       </Button>
+     </Modal.Footer>
+   </Modal>
+   </>
   );
 }

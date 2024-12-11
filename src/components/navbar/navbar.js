@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Button, Modal } from "react-bootstrap";
 import logo from "../../assets/navicon/feastify.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Navigation() {
+  const navigate =  useNavigate()
   const [showModal, setShowModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("Token");
+    setIsLoggedIn(!!token); 
+  }, []);
 
   const handleShow = () => setShowModal(true);
-  // const handleClose = () => setShowModal(false);
 
   const handleSelection = (path) => {
-    setShowModal(false); 
+    setShowModal(false);
+  };
+
+  const handleLogout = () => {
+    sessionStorage.clear();
+    setIsLoggedIn(false);
+    navigate('/');
+    alert("You have been logged out.");
   };
 
   return (
@@ -45,27 +59,52 @@ export default function Navigation() {
               </Link>
             </Nav>
 
-            <Button
-              className="btn-warning text-white fw-semibold px-4 py-2"
-              onClick={handleShow}
-            >
-              Login / Signup
-            </Button>
+            {isLoggedIn ? (
+              <>
+                <Link
+                  to="/chef-profile"
+                  className="btn btn-primary text-white fw-semibold px-4 py-2 me-3"
+                >
+                  Profile
+                </Link>
+                <Button
+                  className="btn-danger text-white fw-semibold px-4 py-2"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button
+                className="btn-warning text-white fw-semibold px-4 py-2"
+                onClick={handleShow}
+              >
+                Login / Signup
+              </Button>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Modal show={showModal}  centered>
+      <Modal show={showModal} centered>
         <Modal.Header closeButton>
           <Modal.Title>Choose Your Role</Modal.Title>
         </Modal.Header>
         <Modal.Body className="text-center">
           <p>Please select your preferred role to proceed:</p>
           <div className="d-flex justify-content-around">
-            <Link to="/chef-login" className="btn btn-primary" onClick={() => handleSelection("/chef-login")}>
+            <Link
+              to="/chef-login"
+              className="btn btn-primary"
+              onClick={() => handleSelection("/chef-login")}
+            >
               Chef
             </Link>
-            <Link to="/login" className="btn btn-primary" onClick={() => handleSelection("/login")}>
+            <Link
+              to="/login"
+              className="btn btn-primary"
+              onClick={() => handleSelection("/login")}
+            >
               Client
             </Link>
           </div>
