@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import Navbar from './components/navbar/navbar';
-import Landingpage from './components/landing page/landingpage';
+import Landingpage from './pages/landingpage/landingpage';
 import EventType from './components/events/events';
 import ServiceDay from './components/service/service';
 import ServiceSchedule from './components/service/serviceschedule';
@@ -9,8 +8,6 @@ import ServiceQuality from './components/service/serviceQuality';
 import DietaryRestrictions from './components/service/diet';
 import CuisineType from './components/cuisine/Cuisine';
 import AboutUs from './components/aboutus/Aboutus';
-import Footer from './components/footer/footer';
-import './App.css';
 import Joy from './components/share-the-joy/joy';
 import SpreadJoyPage from './components/spread-the-joy/page';
 import Comingsoon from './components/comingsoon/comingsoon';
@@ -68,7 +65,7 @@ function App() {
         clearTimeout(logoutTimerRef.current);
       }
     };
-  }, []);
+  }, [resetLogoutTimer]);
 
   const PrivateRoute = ({ element: Element }) => {
     return authToken ? <Element /> : <Navigate to="/login" />;
@@ -79,12 +76,11 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <div className="App">
+      {/*<div>*/}
         <Routes>
-          <Route path="/chef-hire" element={<Landingpage />} />
+          <Route path="/" element={<Landingpage />} />
           <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />
-          <Route path="/chef-profile" element={<PrivateRoute element={ChefProfile} />} />      
+          <Route path="/chef-profile" element={<PrivateRoute element={ChefProfile} />} />
           <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/login" element={<ClientLogin setAuthToken={setAuthToken} />} />
           <Route path="/chef-login" element={<ChefLogin setAuthToken={setAuthToken} />} />
@@ -94,20 +90,20 @@ function App() {
           <Route path="/event-type" element={<EventType />} />
           <Route path="/service-day" element={<ServiceDay />} />
           <Route path="/spread-joy" element={<Joy />} />
-          <Route path="/coming-soon" element={<Comingsoon/>} /> 
+          <Route path="/coming-soon" element={<Comingsoon/>} />
           <Route path="/share-joy" element={<SpreadJoyPage />} />
           <Route path="/chef-chat" element={<ChefChat />} />
           <Route path="/service-schedule" element={<ServiceSchedule />} />
           <Route path="/oven-confirmation" element={<Oven />} />
           <Route path="/kitchen-ware" element={<Kitchenware />} />
           <Route path="/stove-type" element={<StoveType />} />
-          <Route path="/service-quality" element={<ServiceQuality />} />  
-          <Route path="/diet-restrictions" element={<DietaryRestrictions/>} />   
-          <Route path="/cuisine" element={<CuisineType />} />     
-          <Route path="/contact-info-submit" element={<ContactInfo/>} />       
+          <Route path="/service-quality" element={<ServiceQuality />} />
+          <Route path="/diet-restrictions" element={<DietaryRestrictions/>} />
+          <Route path="/cuisine" element={<CuisineType />} />
+          <Route path="/contact-info-submit" element={<ContactInfo/>} />
         </Routes>
-      </div>
-      <Footer />
+      {/*</div>*/}
+      {/*<Footer />*/}
     </>
   );
 }
