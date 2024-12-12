@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Button, Modal } from "react-bootstrap";
+import React, {useEffect, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {Navbar, Nav, Container, Button, Modal} from 'react-bootstrap';
 import logo from "../../assets/navicon/feastify.png";
-import { useNavigate } from 'react-router-dom';
+import LandingPage from "../../pages/landingpage/landingpage";
 
 export default function Navigation() {
-  const navigate =  useNavigate()
+    const navigate =  useNavigate()
   const [showModal, setShowModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const token = sessionStorage.getItem("Token");
-    setIsLoggedIn(!!token); 
+    setIsLoggedIn(!!token);
   }, []);
 
   const handleShow = () => setShowModal(true);
@@ -29,35 +29,30 @@ export default function Navigation() {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-white shadow-sm py-3">
-        <Container>
-          <Link to="/" className="navbar-brand d-flex align-items-center">
-            <img
-              src={logo}
-              width={80}
-              height={55}
-              alt="Feastify"
-              className="d-inline-block align-middle"
-            />
-          </Link>
+            <Navbar expand="lg" className="bg-white shadow-sm py-3">
+                <Container>
+                    <Link to="/" className="navbar-brand d-flex align-items-center">
+                        <img
+                            src={logo}
+                            width={88}
+                            height={55}
+                            alt="Feastify"
+                            style={{objectFit: "cover"}}
+                        />
+                        <p className="text-dark fs-5 fw-bold"> The Feastify</p>
+                    </Link>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
 
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto align-items-center">
-              <Link to="/" className="nav-link text-dark fw-semibold me-3">
-                Home
-              </Link>
-              <Link to="/chef-hire" className="nav-link text-dark fw-semibold me-3">
-                Hire A Private Chef
-              </Link>
-              <Link to="/bookings" className="nav-link text-dark fw-semibold me-3">
-                Group Experiences
-              </Link>
-              <Link to="/contact-us" className="nav-link text-dark fw-semibold me-3">
-                Contact Us
-              </Link>
-            </Nav>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ms-auto align-items-center">
+                            <Link to="/" className="nav-link text-dark fw-semibold me-3">Home</Link>
+                            <Link to="/chef-hire" className="nav-link text-dark fw-semibold me-3">Hire A Private
+                                Chef</Link>
+                            <Link to="/bookings" className="nav-link text-dark fw-semibold me-3">Group
+                                Experiences</Link>
+                            <Link to="/contact-us" className="nav-link text-dark fw-semibold me-3">Contact Us</Link>
+                        </Nav>
 
             {isLoggedIn ? (
               <>
@@ -85,6 +80,7 @@ export default function Navigation() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+            <LandingPage/>
 
       <Modal show={showModal} centered>
         <Modal.Header closeButton>
