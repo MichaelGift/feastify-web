@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import logo from "../../assets/navicon/feastify.png"; 
+import React, {useEffect, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {Navbar, Nav, Container, Button, Modal} from 'react-bootstrap';
+import logo from "../../assets/navicon/feastify.png";
+import LandingPage from "../../pages/landingpage/landingpage";
 
 export default function Navigation() {
     const navigate =  useNavigate()
@@ -28,7 +29,6 @@ export default function Navigation() {
 
   return (
     <>
-        <>
             <Navbar expand="lg" className="bg-white shadow-sm py-3">
                 <Container>
                     <Link to="/" className="navbar-brand d-flex align-items-center">
