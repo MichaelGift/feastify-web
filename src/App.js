@@ -23,6 +23,7 @@ import ExperienceBooking from './components/experiences/experience';
 import ChefProfile from './components/chefsprofile/chefprofile';
 import Checkout from './components/checkout/checkout';
 import ChefLogin from './components/login/chefLogin';
+import Footer from "./components/footer/footer.v2";
 
 export const BASE_URL = 'http://localhost:3000/api';
 
@@ -76,7 +77,7 @@ function App() {
 
   return (
     <>
-      {/*<div>*/}
+      <div>
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />
@@ -102,8 +103,8 @@ function App() {
           <Route path="/cuisine" element={<CuisineType />} />
           <Route path="/contact-info-submit" element={<ContactInfo/>} />
         </Routes>
-      {/*</div>*/}
-      {/*<Footer />*/}
+      </div>
+      <Footer/>
     </>
   );
 }
