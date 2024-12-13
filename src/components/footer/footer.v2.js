@@ -1,8 +1,9 @@
 import footerLogo from '../../assets/logo/footer-logo.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFacebook, faLinkedin, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
+import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 
 export default function footer() {
+    const currentYear = new Date().getFullYear();
     return (
         <>
             <section className="bg-black">
@@ -32,8 +33,11 @@ export default function footer() {
                             <FontAwesomeIcon className="text-light btn" icon={faInstagram}/>
                             <FontAwesomeIcon className="text-light btn" icon={faWhatsapp}/>
                         </div>
-                        <p className="text-white fs-6 fw-light text-center w-100 m-0">All rights reserved by The
-                            Feastify Global Limited
+                        <p className="text-white fs-6 fw-light text-center w-100 m-0 text-capitalize">
+                            <span className="fw-medium">The Feastify Global Limited.</span>
+                            <br/>
+                            &copy; {currentYear} <span className="text-muted">-</span> All rights reserved.
+
                         </p>
 
                     </div>
