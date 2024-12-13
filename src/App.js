@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+import Navbar from './components/navbar/navbar.v2';
 import Landingpage from './pages/landingpage/landingpage';
 import EventType from './components/events/events';
 import ServiceDay from './components/service/service';
@@ -24,6 +25,7 @@ import ChefProfile from './components/chefsprofile/chefprofile';
 import Checkout from './components/checkout/checkout';
 import ChefLogin from './components/login/chefLogin';
 import Footer from "./components/footer/footer.v2";
+import Banner from "./components/promotion/banner";
 
 export const BASE_URL = 'http://localhost:3000/api';
 
@@ -78,6 +80,8 @@ function App() {
   return (
     <>
       <div>
+        <Banner/>
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />

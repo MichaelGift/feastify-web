@@ -33,7 +33,7 @@ export default function footer() {
                             <FontAwesomeIcon className="text-light btn" icon={faInstagram}/>
                             <FontAwesomeIcon className="text-light btn" icon={faWhatsapp}/>
                         </div>
-                        <p className="text-white fs-6 fw-light text-center w-100 m-0 text-capitalize">
+                        <p className="text-white fs-6 fw-light text-center w-100 m-0 text-capitalize" style={{font:'Nunito'}}>
                             <span className="fw-medium">The Feastify Global Limited.</span>
                             <br/>
                             &copy; {currentYear} <span className="text-muted">-</span> All rights reserved.
