@@ -22,6 +22,7 @@ import ClientLogin from './components/login/clientLogin';
 import ChefLogin from './components/login/ChefLogin';
 import ContactUs from './components/contactus/contactus';
 import Team from './components/team/team';
+import ProfileSettings from './components/profile-settings/profile';
 
 
 function App() {
@@ -49,7 +50,8 @@ function App() {
           <Route path="/service-quality" element={<ServiceQuality />} />  
           <Route path="/diet-restrictions" element={<DietaryRestrictions/>} />   
           <Route path="/cuisine" element={<CuisineType />} />     
-          <Route path="/contact-info-submit" element={<ContactInfo/>} />       
+          <Route path="/contact-info-submit" element={<ContactInfo/>} />
+          <Route path="/profile-settings" element={<ProfileSettings />} />       
         </Routes>
       </div>
       <Footer />
