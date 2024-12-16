@@ -10,17 +10,17 @@ export default function footer() {
             <section className="bg-black">
                 <div className="container d-flex flex-column">
                     <div className="row">
-                        <div className="col-md-6 col-sm-6 col-6 d-flex justify-content-sm-center p-2">
-                            <img src={footerLogo} alt="Footer Logo" className='img-fluid' style={{objectFit: 'scale-down'}}/>
+                        <div className="col-md-6 d-flex align-items-center p-2">
+                            <img src={footerLogo} alt="Footer Logo" className='img-fluid mx-auto' style={{objectFit: 'scale-down'}}/>
                         </div>
-                        <div className="col-md-3 col-sm-6 col-6 p-4">
+                        <div className="col-md-3 p-4 text-center text-md-left">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Main Links</p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link to="/chef-hire" style={{color: 'white'}}>Hire Private Chefs</Link></p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Group Experiences</Link></p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link to="/contact-us" style={{color: 'white'}}>Contact Us</Link></p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link to="/chef-register" style={{color: 'white'}}>Chef Register</Link></p>
                         </div>
-                        <div className=" col-md-3 col-sm-12 col-12 p-4">
+                        <div className=" col-md-3 p-4 text-center text-md-left">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Legal</p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link  style={{color: 'white'}}>Terms & Conditions</Link></p>
                             <a className="fs-6 fw-normal text-light" style={{font: 'Nunito'}} href="#faq-section">FAQ</a>
