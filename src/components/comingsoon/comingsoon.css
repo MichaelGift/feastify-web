@@ -28,8 +28,9 @@
 .btm {
     border-radius: 20px !important;
     height: 3rem;
-    margin-top: 2.5rem;
+    margin-top: 1.8rem;
     z-index: 1;
+    margin-right: -1rem;
     background-color: #FB9D00;
 }
 

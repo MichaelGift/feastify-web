@@ -22,7 +22,7 @@ export default function ContactInfo() {
             </div>
 
             <div className="" style={{ marginTop: '4rem'}}>
-                <Link to="/" style={{ textDecoration: 'none'}}><button className="landing-btn" type="button">All Set</button></Link>             
+                <Link to="/" style={{ textDecoration: 'none'}}><button className="landing-btn d-block m-auto border border-warning rounded " type="button">All Set</button></Link>             
             </div>
         </section>
     </div>

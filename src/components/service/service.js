@@ -78,7 +78,7 @@ export default function ServiceDay() {
         </div>
         <div className="grid grid-cols-7 gap-2 text-center mb-2 font-bold">
           {weekdays.map((weekday, index) => (
-            <div key={index} className="days border-yellow-500 py-2">
+            <div key={index} className="days border-yellow-500 py-2 ">
               {weekday}
             </div>
           ))}
@@ -94,7 +94,7 @@ export default function ServiceDay() {
             <button
               key={day}
               onClick={() => toggleDay(day)}
-              className={`day-box py-2 ${
+              className={`day-box rounded py-2 ${
                 selectedDays.includes(day) ? 'selected' : ''
               }`}
             >
@@ -103,16 +103,16 @@ export default function ServiceDay() {
           ))}
         </div>
 
-        <div className="flex space-x-4">
+        <div className="d-block m-auto">
           <button
             onClick={() => setSelectedDays([])}
-            className="calendar-btn border border-yellow-500 text-yellow-500 px-4 py-2 rounded-lg"
+            className="d-block m-auto calendar-btn border border-yellow-500 text-yellow-500 px-4 py-2 rounded-lg"
           >
             Cancel
           </button>
           <button
             onClick={handleDoneClick}
-            className="calendar-btn bg-yellow-500 text-white px-4 py-2 rounded-lg"
+            className="d-block m-auto calendar-btn bg-yellow-500 text-white px-4 py-2 rounded-lg"
           >
             Done
           </button>

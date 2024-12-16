@@ -16,9 +16,9 @@ export default function ComingSoon() {
           </div>
           <p> *Notify me when the Service is available*</p>
         </div>
-        <div className='landingbuttons' style={{ marginTop: '4rem'}}>
+        <div className='landingbuttons'>
             <div class="">
-                <Link to="/event-type" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Our Services</button></Link>                           
+                <Link to="/event-type" style={{ textDecoration: 'none'}}><button class="landing-btn d-block m-auto border border-warning rounded " type="button">Our Services</button></Link>                           
             </div>
       </div>
       </section>

@@ -11,10 +11,10 @@ export default function ServiceQuality() {
     <div className="body-container flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-2xl font-bold mb-4 mt-5">Open to discovering ...</h1>
       <div className="landingbuttons mt-4">
-        <div className="d-grid gap-2 col-6 mx-auto mt-5">
+        <div className="d-grid gap-2 col-6 mx-auto mt-5 mb-5">
           {options.map((option, index) => (
             <Link to="/diet-restrictions" key={index} style={{ textDecoration: 'none' }}>
-              <button className="landing-btn" type="button">
+              <button className="landing-btn d-block m-auto border border-warning rounded " type="button">
                 {option.label}: {option.description}
               </button>
             </Link>

@@ -8,9 +8,9 @@ export default function DietaryRestrictions() {
 
 
         <div className='landingbuttons'>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <Link to="/cuisine" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">Yes</button></Link>
-                <Link to="/cuisine" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">No</button></Link>
+            <div class="d-grid gap-2 col-6 mx-auto mb-5">
+                <Link to="/cuisine" style={{ textDecoration: 'none'}}><button class="landing-btn d-block m-auto border border-warning rounded " type="button">Yes</button></Link>
+                <Link to="/cuisine" style={{ textDecoration: 'none'}}><button class="landing-btn d-block m-auto border border-warning rounded " type="button">No</button></Link>
                                 
             </div>
         </div>

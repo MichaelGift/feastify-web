@@ -12,7 +12,7 @@ export default function ChefChat() {
                 <textarea class="form-controlarea" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div class="">
-                <Link to="/contact-info-submit" style={{ textDecoration: 'none'}}><button class="landing-btn" type="button">continue</button></Link>
+                <Link to="/contact-info-submit" style={{ textDecoration: 'none'}}><button class="landing-btn d-block m-auto border border-warning rounded " type="button">continue</button></Link>
              
             </div>
         </section>

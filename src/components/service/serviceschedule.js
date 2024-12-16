@@ -67,10 +67,11 @@ export default function ServiceSchedule() {
             ))}
           </tbody>
         </table>
-        <div className="flex space-x-4 mt-5">
+        <div className="flex space-x-4 mb-5 mt-5" >
           <button
             onClick={handleDoneClick}
             className="calendar-btn bg-yellow-500 text-white px-4 py-2 rounded-lg"
+            
           >
             Continue
           </button>

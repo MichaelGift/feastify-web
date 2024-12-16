@@ -5,7 +5,7 @@ export default function CuisineType() {
   return (
     <div className="cuisinesec mt-5 py-2">
       <h1 className="mt-5">We cuisine a menu that&apos;s ...</h1>
-      <div className="flex flex-col space-y-2 w-full max-w-xs">
+      <div className="flex flex-col space-y-2 w-full max-w-xs mt-5">
         {[
           { label: 'Local', description: 'Exploring the rich tapestry of Kenyan and international cuisines in Nairobi', image: '/images/buffet-style.png' },
           { label: 'Italian', description: 'Italian cuisine with a menu featuring pasta, risotto, and authentic Italian flavors', image: '/images/buffet-style.png' },
@@ -16,9 +16,9 @@ export default function CuisineType() {
           { label: 'Latin American', description: 'Bold tastes of Latin America, Mexico, Brazil, and Caribbean-inspired dishes', image: '/images/cocktail-reception.png' },
           { label: 'Surprise Me', description: 'Leave it to the chef to surprise you with a curated selection of dishes', image: '/images/buffet-style.png' },
         ].map((option, index) => (
-            <div className='landingbuttons' key={index}>
+            <div className='landingbuttons mb-5' key={index}>
                 <div className="cuisinebtn">
-                <Link to="/kitchen-ware" style={{ textDecoration: 'none'}}><button className="landing-btn" style={{width: '45rem'}} type="button">{option.label} <br/> {option.description}</button></Link>
+                <Link to="/kitchen-ware" style={{ textDecoration: 'none'}}><button className="landing-btn d-block m-auto border border-warning rounded " style={{width: '45rem'}} type="button">{option.label} <br/> {option.description}</button></Link>
                 </div>
             </div>
         ))}
