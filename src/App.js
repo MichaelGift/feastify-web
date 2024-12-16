@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import Navbar from './components/navbar/navbar.v2';
+import Navbar from './components/navbar/navbar';
 import Landingpage from './pages/landingpage/landingpage';
 import Hirepage from './components/landing page/landingpage';
 import EventType from './components/events/events';
