@@ -1,6 +1,3 @@
-.experience-wrapper {
-padding: 1rem;
-}
 
 .section-header {
 font-size: 2rem;
@@ -45,6 +42,7 @@ object-fit: cover;
 
 .card-details {
 padding: 1rem;
+margin: 0 auto;
 }
 
 .price {
@@ -54,7 +52,7 @@ color: #fda702;
 
 .booking-form-section {
 flex: 1;
-max-width: 100%;
+max-width: 20%;
 padding: 1.5rem;
 background-color: #fff;
 border: 1px solid #fda702;
@@ -105,7 +103,7 @@ background-color: #e69500;
 
 .steps-section {
 margin-top: 2rem;
-width: 100%;
+width: 99vw;
 padding: 2rem 1rem;
 background-color: #000000;
 color: white;

@@ -91,7 +91,7 @@ export default function ExperienceBooking() {
             <p >Make payment and prepare for an adventure.</p>
           </div>
         </div>
-        <div className="card-grid">
+        <div className="card-grid" style={{ margin: '0 auto', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
             {Array(1).fill().map((_, index) => (
               <div className="experience-card" key={index}>
                 <img
@@ -101,16 +101,16 @@ export default function ExperienceBooking() {
                 />
                 <div className="card-details">
                   <h3>London, UK</h3>
-                  <p>🕒 12 Days Trip</p>
+                  <p style={{color: 'black'}}>🕒 12 Days Trip</p>
                   <p className="price"><strong>$4.2k</strong> PP</p>
-                  <p className="category">Group Tour</p>
+                  <p className="category" style={{color: 'black'}}>Group Tour</p>
                 </div>
               </div>
             ))}
           </div>
       </section>
 
-        <section className="transparency-section">
+        <section className="transparency-section text-center mb-5 mt-5">
         <h2 className="transparency-header">Time is money 💰 so just save both</h2>
         <p>Let us handle it all for you and provide exact pricing details.</p>
       </section>
