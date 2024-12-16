@@ -10,8 +10,8 @@ export default function footer() {
             <section className="bg-black">
                 <div className="container d-flex flex-column">
                     <div className="row">
-                        <div className="col-md-6 col-sm-6 col-6 justify-content-sm-center">
-                            <img src={footerLogo} alt="Footer Logo"/>
+                        <div className="col-md-6 col-sm-6 col-6 d-flex justify-content-sm-center p-2">
+                            <img src={footerLogo} alt="Footer Logo" className='img-fluid' style={{objectFit: 'scale-down'}}/>
                         </div>
                         <div className="col-md-3 col-sm-6 col-6 p-4">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Main Links</p>
