@@ -11,7 +11,7 @@ export default function Navigation() {
     useEffect(() => {
         const token = sessionStorage.getItem("Token");
         setIsLoggedIn(!!token);
-    }, []);
+    }, [sessionStorage.getItem("Token")]);
 
     const handleShow = () => setShowModal(true);
 
