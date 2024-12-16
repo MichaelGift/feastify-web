@@ -2,9 +2,6 @@
     font-size: 2.5rem;
 }
 
-.abtheader {
-    margin-top: 1.5rem;
-}
 
 header span {
     color: #FB9D00;
@@ -14,33 +11,11 @@ header span {
     color: #FB9D00;
 }
 
-.description {
-    padding: 3rem;
-}
-
-footer p {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.footerlogo {
-    display: block;
-    margin: 0 auto;
-}
 
 .description li {
     color: #FB9D00;
 }
 
-.image-gallery {
-    margin-top: 3rem;
-}
-
-.image-gallery .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 .card {
     width: 20%; 
@@ -195,5 +170,156 @@ h2 {
 
 .footerlogo {
     width: 200px;
+}
+}
+
+
+
+.hero-content {
+flex: 1 1 45%;
+}
+
+
+.hero-content p {
+color: #666;
+}
+
+.btn-primary {
+background-color: #f2a900;
+color: white;
+border: none;
+padding: 12px 24px;
+font-size: 1rem;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+background-color: #e69500;
+}
+
+.hero-stats {
+flex: 1 1 45%;
+gap: 1em;
+}
+
+.stat-box {
+background: #f2a900;
+color: white;
+border-radius: 10px;
+width: 100%;
+max-width: 200px;
+}
+
+.testimonial-header {
+color: #f2a900;
+}
+
+.testimonial-container {
+gap: 2em;
+}
+
+.testimonial-card {
+max-width: 300px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card img {
+border-radius: 50%;
+width: 80px;
+height: 80px;
+margin-bottom: 10px;
+}
+
+.about-section h2 {
+color: #f2a900;
+}
+
+.about-text {
+max-width: 600px;
+margin: 0 auto;
+color: #666;
+font-size: 1rem;
+}
+
+
+.team-container {
+gap: 1.5em;
+}
+
+.team-member img {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+}
+
+
+.faq-container {
+max-width: 800px;
+}
+
+.faq-item {  
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h4 {
+color: #f2a900;
+}
+    
+.values-container {
+gap: 2em;
+}
+
+.value-card {
+max-width: 200px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+.hero-section {
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 100%;
+}
+
+.hero-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.stat-box {
+    max-width: 150px;
+}
+
+.testimonial-container,
+.team-container,
+.values-container {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+@media (max-width: 480px) {
+.hero-content h1 {
+    font-size: 2rem;
+}
+
+.btn-primary {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
+
+.stat-box h2 {
+    font-size: 1.5rem;
+}
+
+.testimonials-section h2,
+.about-section h2 {
+    font-size: 1.5rem;
 }
 }

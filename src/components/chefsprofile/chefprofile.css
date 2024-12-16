@@ -1,0 +1,143 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    font-family: "Arial", sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .profile-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .upload-photo {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #fda702;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-info .info-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-section p {
+    font-weight: bold;
+    margin: 0 0 0.5rem;
+  }
+  
+  .info-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #fda702;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .info-value button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+  }
+  
+  .profile-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .stats-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-card p {
+    font-weight: bold;
+  }
+  
+  .stats-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .stats-value button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .reviews-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review h4 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+  }
+  
+  .stars {
+    color: #fda702;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* a {
+    text-decoration: none;
+    color: #fda702;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: inline-block;
+  } */
+  .info-value input,
+.info-value textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.info-value textarea {
+  resize: none;
+}
+
+.info-value button {
+  margin-left: 1rem;
+}
