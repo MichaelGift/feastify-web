@@ -27,6 +27,7 @@ import Checkout from './components/checkout/checkout';
 import ChefLogin from './components/login/chefLogin';
 import Footer from "./components/footer/footer.v2";
 import Banner from "./components/promotion/banner";
+import Chat from './components/chat/chat';
 
 export const BASE_URL = 'http://localhost:3000/api';
 
@@ -86,6 +87,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path='/chef-hire' element={<Hirepage/> } />
+          <Route path='/chat' element={<Chat/> } />
           <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />
           <Route path="/chef-profile" element={<PrivateRoute element={ChefProfile} />} />
           <Route path="/contact-us" element={<ContactUs/>} />

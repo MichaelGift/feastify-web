@@ -1,0 +1,156 @@
+.chat-container {
+display: flex;
+height: 100vh;
+font-family: 'Inter', sans-serif;
+color: #222;
+background-color: #f4f6f9;
+}
+
+.discussions {
+flex: 1;
+max-width: 320px;
+border-right: 1px solid #e0e0e0;
+background: #fff;
+display: flex;
+flex-direction: column;
+}
+
+.discussions h2 {
+margin: 0;
+padding: 1rem;
+font-size: 1.2rem;
+font-weight: 600;
+color: #444;
+background: #f9f9f9;
+border-bottom: 1px solid #e0e0e0;
+}
+
+.discussion-list {
+flex: 1;
+overflow-y: auto;
+}
+
+.discussion-item {
+padding: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid #f0f0f0;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.discussion-item:hover,
+.discussion-item.active {
+background-color: #f0f4ff;
+}
+
+.discussion-name {
+font-size: 1rem;
+font-weight: 500;
+}
+
+.last-message {
+font-size: 0.9rem;
+color: #888;
+}
+
+.chat-window {
+flex: 2;
+display: flex;
+flex-direction: column;
+background: #fdfdfd;
+}
+
+.chat-header {
+padding: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #4a90e2;
+color: #fff;
+font-weight: 600;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+background: none;
+border: none;
+color: #fff;
+font-size: 1.2rem;
+cursor: pointer;
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+transition: background 0.2s ease;
+}
+
+.back-button:hover {
+background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-messages {
+flex: 1;
+padding: 1rem;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+background-color: #f4f6f9;
+}
+
+.message {
+padding: 0.8rem 1rem;
+border-radius: 8px;
+max-width: 70%;
+line-height: 1.4;
+font-size: 0.95rem;
+word-wrap: break-word;
+position: relative;
+}
+
+.outgoing {
+align-self: flex-end;
+background-color: #4a90e2;
+color: #fff;
+}
+
+.incoming {
+align-self: flex-start;
+background-color: #eaeef5;
+color: #333;
+}
+
+.timestamp {
+font-size: 0.75rem;
+color: #666;
+margin-top: 4px;
+text-align: right;
+}
+
+.read-status {
+font-size: 0.75rem;
+color: #999;
+display: flex;
+justify-content: flex-end;
+gap: 0.3rem;
+margin-top: 4px;
+}
+
+.read-status span {
+display: inline-flex;
+align-items: center;
+}
+
+@media (max-width: 768px) {
+.chat-container {
+    flex-direction: column;
+}
+
+.discussions {
+    max-width: 100%;
+}
+
+.chat-window {
+    height: calc(100vh - 60px);
+}
+}

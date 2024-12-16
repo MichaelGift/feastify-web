@@ -177,13 +177,13 @@ export default function LandingPage() {
             <section className="bg-black">
                 <div className="container">
                     <div className="d-flex flex-column align-items-center mb-4 p-2">
-                        <p className="fs-4 text-center text-capitalize" style={{font: 'Nunito', color: '#FB9D00'}}>
+                        <p className="fs-4 text-center text-capitalize mt-5" style={{font: 'Nunito', color: '#FB9D00'}}>
                             Our Values
                         </p>
                         <p className="fs-3 text-center text-capitalize fw-medium text-light" style={{font: 'Nunito'}}>
                             We are friendly to your wallet.
                         </p>
-                        <div className="row">
+                        <div className="row mb-5">
                             <div className="col-md-3 my-2 p-1">
                                 <div className="bg-white d-flex flex-column align-items-center rounded-4 p-3 h-100">
                                     <img
@@ -253,7 +253,7 @@ export default function LandingPage() {
             </section>
 
             <section className="container" id="faq-section">
-                <p className="fs-3 text-center text-capitalize fw-medium" style={{font: 'Nunito'}}>
+                <p className="fs-3 text-center text-capitalize fw-medium mt-5" style={{font: 'Nunito'}}>
                     Frequently Asked Questions
                 </p>
                 <div className="row mb-5">
@@ -619,7 +619,6 @@ export default function LandingPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6"></div>
                 </div>
             </section>
         </>

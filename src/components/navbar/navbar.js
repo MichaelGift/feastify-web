@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {Button, Container, Modal, Nav, Navbar} from 'react-bootstrap';
 import logo from "../../assets/navicon/feastify-logo.png";
+import { AiOutlineMessage, AiOutlineProfile, AiOutlineLogout } from 'react-icons/ai';
 
 export default function Navigation() {
     const navigate = useNavigate()
@@ -54,19 +55,29 @@ export default function Navigation() {
 
                         <Nav className="align-items-center">
                             {isLoggedIn ? (
-                                <>
+                                <>  
+                                    <Link 
+                                        to="/chat"
+                                        style={{fontSize: '2rem', marginRight: '1rem'}}
+                                        title="Messages"
+                                    >
+                                        <AiOutlineMessage/>
+                                    </Link>
                                     <Link
                                         to="/chef-profile"
-                                        className="btn btn-primary text-white fw-semibold px-4 py-2 me-3"
+                                        style={{fontSize: '2rem', marginRight: '1rem'}}
+                                        title="Profile"
                                     >
-                                        Profile
+                                       <AiOutlineProfile/>
                                     </Link>
-                                    <Button
-                                        className="btn-danger text-white fw-semibold px-4 py-2"
+                                    <Link
+                                        style={{fontSize: '2rem', marginRight: '1rem'}}
                                         onClick={handleLogout}
+                                        title="Logout"
                                     >
-                                        Logout
-                                    </Button>
+                                        <AiOutlineLogout/>
+                                    </Link>
+
                                 </>
                             ) : (
                                 <Button
