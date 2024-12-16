@@ -2,6 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/navbar/navbar.v2';
 import Landingpage from './pages/landingpage/landingpage';
+import Hirepage from './components/landing page/landingpage';
 import EventType from './components/events/events';
 import ServiceDay from './components/service/service';
 import ServiceSchedule from './components/service/serviceschedule';
@@ -84,6 +85,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Landingpage />} />
+          <Route path='/chef-hire' element={<Hirepage/> } />
           <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />
           <Route path="/chef-profile" element={<PrivateRoute element={ChefProfile} />} />
           <Route path="/contact-us" element={<ContactUs/>} />

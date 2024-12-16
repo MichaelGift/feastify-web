@@ -10,7 +10,6 @@ import yellowStar from '../../assets/logo/yellow-star.svg';
 export default function LandingPage() {
     return (
         <>
-            {/*Hero Section*/}
             <section className="container">
                 <div className="row mt-5 mb-5">
                     <div className="col-md-6">
@@ -94,7 +93,6 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-            {/*Reviews Section*/}
             <section className="container">
                 <div className="mb-4">
                     <p className="fs-6 text-center" style={{font: 'Nunito', color: '#FB9D00'}}>
@@ -161,7 +159,6 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-            {/*About Us Section*/}
             <section className="container">
                 <div className="d-flex flex-column align-items-center mb-4">
                     <p className="fs-4 text-center" style={{font: 'Nunito', color: '#FB9D00'}}>
@@ -177,7 +174,6 @@ export default function LandingPage() {
                     </p>
                 </div>
             </section>
-            {/*Values Section*/}
             <section className="bg-black">
                 <div className="container">
                     <div className="d-flex flex-column align-items-center mb-4 p-2">
@@ -185,7 +181,6 @@ export default function LandingPage() {
                             Our Values
                         </p>
                         <p className="fs-3 text-center text-capitalize fw-medium text-light" style={{font: 'Nunito'}}>
-                            {/*We are friendly to your wallet, we are transparent, we are unique and we are always here for you*/}
                             We are friendly to your wallet.
                         </p>
                         <div className="row">
@@ -257,8 +252,7 @@ export default function LandingPage() {
                 </div>
             </section>
 
-            {/*FAQ Section*/}
-            <section className="container">
+            <section className="container" id="faq-section">
                 <p className="fs-3 text-center text-capitalize fw-medium" style={{font: 'Nunito'}}>
                     Frequently Asked Questions
                 </p>
