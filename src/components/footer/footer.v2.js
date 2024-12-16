@@ -15,15 +15,15 @@ export default function footer() {
                         </div>
                         <div className="col-md-3 col-sm-6 col-6 p-4">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Main Links</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Hire Private Chefs</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link to="/chef-hire" style={{color: 'white'}}>Hire Private Chefs</Link></p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Group Experiences</Link></p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Contact Us</Link></p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Chef Register</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link to="/contact-us" style={{color: 'white'}}>Contact Us</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link to="/chef-register" style={{color: 'white'}}>Chef Register</Link></p>
                         </div>
                         <div className=" col-md-3 col-sm-12 col-12 p-4">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Legal</p>
                             <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link  style={{color: 'white'}}>Terms & Conditions</Link></p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link  style={{color: 'white'}}>FAQ</Link></p>
+                            <a className="fs-6 fw-normal text-light" style={{font: 'Nunito'}} href="#faq-section">FAQ</a>
                         </div>
                     </div>
                     <div className="bg-light mb-3 align-self-center" style={{height: '1px', width: '90%'}}></div>
