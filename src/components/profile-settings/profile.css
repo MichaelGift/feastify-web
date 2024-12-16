@@ -1,0 +1,248 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #000;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  header {
+    background-color: #000;
+    color: #f59e0b;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Card Styling */
+  .profile-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .upload-btn {
+    background-color: #f59e0b;
+    display: flex;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  
+  .profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Information Blocks */
+  .info-block {
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .info-title {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .edit-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .about-mark, .payment-details {
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .payment-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .payment-tag {
+    padding: 0.3rem 0.7rem;
+    background-color: #34d399;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .payment-account {
+    background-color: #f3f4f6;
+    color: #000;
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  /* Reusable Margin */
+  .section-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  /* New Section Styles */
+.stats-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.2rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .stats-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .stats-item span {
+    font-weight: bold;
+  }
+  
+  .stats-item .icon {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Star Rating */
+  .stars {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    color: #f59e0b;
+    font-size: 1.2rem;
+  }
+  
+  .star-empty {
+    color: #e5e7eb; 
+    font-size: 1.2rem;
+  }
+  
+  /* Review Section */
+  .review-container {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .review-author {
+    font-weight: bold;
+  }
+  
+  .review-text {
+    margin-top: 0.5rem;
+  }
+  
+  .review-link {
+    margin-top: 0.5rem;
+    text-align: left;
+    color: #f59e0b;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+  
+  .bottom-nav button {
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  .bottom-nav button span {
+    display: block;
+    font-size: 1rem;
+  }
+  
+  .bottom-nav button:hover {
+    color: #000;
+  }
