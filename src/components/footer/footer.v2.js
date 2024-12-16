@@ -28,12 +28,17 @@ export default function footer() {
                     </div>
                     <div className="bg-light mb-3 align-self-center" style={{height: '1px', width: '90%'}}></div>
                     <div className="d-flex flex-column align-items-center mb-3">
-                        <div className="d-flex flex-row mb-3">
-                            <FontAwesomeIcon className="text-light btn" icon={faFacebook}/>
-                            <FontAwesomeIcon className="text-light btn" icon={faLinkedin}/>
-                            <FontAwesomeIcon className="text-light btn" icon={faInstagram}/>
-                            <FontAwesomeIcon className="text-light btn" icon={faWhatsapp}/>
-                        </div>
+                    <div className="d-flex flex-row mb-3">
+                        <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon className="text-light btn" icon={faFacebook} />
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon className="text-light btn" icon={faLinkedin} />
+                        </a>
+                        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon className="text-light btn" icon={faInstagram} />
+                        </a>
+                    </div>
                         <p className="text-white fs-6 fw-light text-center w-100 m-0 text-capitalize" style={{font:'Nunito'}}>
                             <span className="fw-medium">The Feastify Global Limited.</span>
                             <br/>
