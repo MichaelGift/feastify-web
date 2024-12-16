@@ -45,7 +45,6 @@ export default function Navigation() {
 
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto align-items-center">
-                            <Link to="/" className="nav-link text-dark fw-semibold me-3">Home</Link>
                             <Link to="/chef-hire" className="nav-link text-dark fw-semibold me-3">Hire A Private
                                 Chef</Link>
                             <Link to="/bookings" className="nav-link text-dark fw-semibold me-3">Group
