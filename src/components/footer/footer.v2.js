@@ -1,4 +1,5 @@
 import footerLogo from '../../assets/logo/footer-logo.png'
+import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
 
@@ -14,15 +15,15 @@ export default function footer() {
                         </div>
                         <div className="col-md-3 col-sm-6 col-6 p-4">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Main Links</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}>Hire Private Chefs</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}>Group Experiences</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}>Contact Us</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}>Chef Register</p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Hire Private Chefs</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Group Experiences</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Contact Us</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link style={{color: 'white'}}>Chef Register</Link></p>
                         </div>
                         <div className=" col-md-3 col-sm-12 col-12 p-4">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Legal</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}>Terms & Conditions</p>
-                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}>FAQ</p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link  style={{color: 'white'}}>Terms & Conditions</Link></p>
+                            <p className="fs-6 fw-normal text-light" style={{font: 'Nunito'}}><Link  style={{color: 'white'}}>FAQ</Link></p>
                         </div>
                     </div>
                     <div className="bg-light mb-3 align-self-center" style={{height: '1px', width: '90%'}}></div>
