@@ -1,4 +1,4 @@
-import footerLogo from '../../assets/logo/footer-logo.png'
+import footerLogo from '../../assets/logo/footer-logo-.png'
 import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
@@ -11,7 +11,10 @@ export default function footer() {
                 <div className="container d-flex flex-column">
                     <div className="row">
                         <div className="col-md-6 d-flex align-items-center p-2">
-                            <img src={footerLogo} alt="Footer Logo" className='img-fluid mx-auto' style={{objectFit: 'scale-down'}}/>
+                            <img src={footerLogo} alt="Footer Logo" className='mx-auto' style={{
+                                objectFit: 'scale-down',
+                                height: '200px',
+                            }}/>
                         </div>
                         <div className="col-md-3 p-4 text-center text-md-left">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Main Links</p>
