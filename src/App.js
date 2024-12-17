@@ -22,12 +22,16 @@ import ClientLogin from './components/login/clientLogin';
 import ChefRegister from './components/login/ChefRegister';
 import ContactUs from './components/contactus/contactus';
 import ExperienceBooking from './components/experiences/experience';
-import ChefProfile from './components/chefsprofile/chefprofile';
+import ChefProfile from './components/profiles/chefprofile';
 import Checkout from './components/checkout/checkout';
 import ChefLogin from './components/login/chefLogin';
 import Footer from "./components/footer/footer.v2";
 import Banner from "./components/promotion/banner";
 import Chat from './components/chat/chat';
+import Unauthorized from './components/unauthorized/unauthorized';
+import RoleBasedRoute from './components/Role/role';
+import ClientProfile from './components/profiles/clientprofile';
+import ScrollToTop from './components/scrollToTop';
 
 export const BASE_URL = 'http://localhost:3000/api';
 
@@ -37,6 +41,7 @@ function App() {
 
   const logoutUser = () => {
     sessionStorage.removeItem('Token');
+    sessionStorage.removeItem('Role');
     setAuthToken(null);
     if (logoutTimerRef.current) clearTimeout(logoutTimerRef.current); 
     alert('You have been logged out due to inactivity');
@@ -74,32 +79,40 @@ function App() {
 
   const PrivateRoute = ({ element: Element }) => {
     return authToken ? <Element /> : <Navigate to="/login" />;
-   
   };
-
-
 
   return (
     <>
       <div>
         <Banner/>
         <Navbar/>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Landingpage />} />
-          <Route path='/chef-hire' element={<Hirepage/> } />
-          <Route path='/chat' element={<Chat/> } />
-          <Route path="/bookings" element={<PrivateRoute element={ExperienceBooking} />} />
-          <Route path="/chef-profile" element={<PrivateRoute element={ChefProfile} />} />
-          <Route path="/contact-us" element={<ContactUs/>} />
+          <Route path="/chef-hire" element={<Hirepage />} />
+          <Route path="/chat" element={<Chat />} />
+          {/* Role-based protected routes */}
+          <Route path="/bookings" element={<RoleBasedRoute element={ExperienceBooking} roles={['client']} />} />
+          <Route path="/chef-profile" element={<RoleBasedRoute element={ChefProfile} roles={['chef']} />} />
+          <Route path="/client-profile" element={
+            // <RoleBasedRoute 
+            // element=
+            <ClientProfile /> 
+            // roles={['chef']} 
+            // />
+            } 
+            /> 
+          {/* Public routes */}
+          <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/login" element={<ClientLogin setAuthToken={setAuthToken} />} />
           <Route path="/chef-login" element={<ChefLogin setAuthToken={setAuthToken} />} />
-          <Route path="/chef-register" element={<ChefRegister/>} />
-          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/chef-register" element={<ChefRegister />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/event-type" element={<EventType />} />
           <Route path="/service-day" element={<ServiceDay />} />
           <Route path="/spread-joy" element={<Joy />} />
-          <Route path="/coming-soon" element={<Comingsoon/>} />
+          <Route path="/coming-soon" element={<Comingsoon />} />
           <Route path="/share-joy" element={<SpreadJoyPage />} />
           <Route path="/chef-chat" element={<ChefChat />} />
           <Route path="/service-schedule" element={<ServiceSchedule />} />
@@ -107,9 +120,12 @@ function App() {
           <Route path="/kitchen-ware" element={<Kitchenware />} />
           <Route path="/stove-type" element={<StoveType />} />
           <Route path="/service-quality" element={<ServiceQuality />} />
-          <Route path="/diet-restrictions" element={<DietaryRestrictions/>} />
+          <Route path="/diet-restrictions" element={<DietaryRestrictions />} />
           <Route path="/cuisine" element={<CuisineType />} />
-          <Route path="/contact-info-submit" element={<ContactInfo/>} />
+          <Route path="/contact-info-submit" element={<ContactInfo />} />
+          {/* Unauthorized Route */}
+          <Route path="/unauthorized" element={<Unauthorized />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
       <Footer/>

@@ -1,0 +1,38 @@
+.caantainer {
+position: relative;
+width: 100%;
+height: 22rem; /* Ensure the height is large enough */
+max-width: 35rem;
+margin: auto;
+text-align: center;
+z-index: 0;
+  }
+
+.map {
+width: 100% !important;
+height: 100% !important;
+position: relative;
+z-index: 0;
+}
+
+.find_location {
+position: absolute;
+right: 0;
+width: 20%; 
+min-height: 1.8rem;
+font-size: 0.8rem;
+/* top: 1rem; 
+left: 0;
+right: 0; */
+z-index: 1000;
+background-color: white;
+cursor: pointer;
+border-radius: 0.5rem; 
+border: none;
+border-top: 1px solid lightgrey;
+}
+
+.find_location:hover {
+background-color: black;
+color: #FB9D00;
+}

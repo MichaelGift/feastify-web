@@ -28,7 +28,7 @@ export default function ChefRegister() {
     workInKenya: '',
     criminalRecord: '',
     linkedin: '',
-    pinterest: '',
+    instagram: '',
     portfolio: ''
   });
 
@@ -76,7 +76,7 @@ export default function ChefRegister() {
       criminal_record: formData.criminalRecord === 'Yes',
       socials: {
         linkedin: formData.linkedin,
-        pinterest: formData.pinterest,
+        instagram: formData.instagram,
         portfolio: formData.portfolio
       }
     };
@@ -386,12 +386,12 @@ export default function ChefRegister() {
             />
           </div>
           <div className='input-box mt-4'>
-            <label for="check-female">Your Pintrest (optional)</label>
+            <label for="check-female">Your Instagram</label>
             <input
                 type="text"
                 name="pinterest"
                 placeholder="Enter your Pinterest URL"
-                value={formData.pinterest}
+                value={formData.instagram}
                 onChange={handleChange}
             />
           </div>
