@@ -8,7 +8,6 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth';
 import { auth } from '../../firebase';
-import './auth.css';
 import { BASE_URL } from '../../App';
 
 export default function ChefLogin({ setAuthToken }) {
@@ -91,14 +90,14 @@ export default function ChefLogin({ setAuthToken }) {
   };
 
   return (
-    <div className="login_form p-5 m-auto">
+    <div className="">
       <form onSubmit={handleSubmit}>
-        <div className="input_box position-relative">
-          <label className="d-block fw-normal mb-2" htmlFor="email">
+        <div className="">
+          <label className="" htmlFor="email">
             Email
           </label>
           <input
-            className="h-100 d-inline-block rounded border-1 p-1 mb-4"
+            className=""
             type="email"
             id="email"
             name="email"
@@ -109,9 +108,9 @@ export default function ChefLogin({ setAuthToken }) {
           />
         </div>
 
-        <div className="input_box position-relative">
-          <div className="password_title d-flex justify-content-between text-center">
-            <label className="d-block fw-normal mb-2" htmlFor="password">
+        <div className="">
+          <div className="">
+            <label className="" htmlFor="password">
               Password
             </label>
             <a
@@ -126,7 +125,7 @@ export default function ChefLogin({ setAuthToken }) {
             </a>
           </div>
           <input
-            className="h-100 d-inline-block rounded border-1 p-1 mb-4"
+            className=""
             type="password"
             id="password"
             name="password"
@@ -138,14 +137,14 @@ export default function ChefLogin({ setAuthToken }) {
         </div>
 
         <button
-          className="w-75 h-100 d-inline-block mb-4 rounded border-0"
+          className=""
           type="submit"
         >
           Log In
         </button>
 
         {loginStatus && <p className="status_message">{loginStatus}</p>}
-        <p className="sign_up">
+        <p className=''>
           Don't have an account? <Link to="/chef-register">Sign up</Link>
         </p>
       </form>
