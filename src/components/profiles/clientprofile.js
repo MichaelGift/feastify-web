@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./chefprofile.css";
 import { BASE_URL } from "../../App";
 
-const ChefProfile = () => {
+const ClientProfile = () => {
   const [isEditing, setIsEditing] = useState({
     name: false,
     email: false,
     phone: false,
-    about: false,
   });
 
   const [userInfo, setUserInfo] = useState({
     name: "Loading...",
     email: "Loading...",
     phone: "Loading...",
-    about: "Loading...",
   });
+
 
   useEffect(() => {
     const token = sessionStorage.getItem("Token");
 
     if (token) {
-      fetch(`${BASE_URL}/chefs/find-by-uid`, {
+      fetch(`${BASE_URL}/clients/find-by-uid`, {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       })
@@ -37,7 +37,6 @@ const ChefProfile = () => {
             name: `${data.first_name || ""} ${data.last_name || ""}`.trim() || "Your Name",
             email: data.email || "yourname@example.com",
             phone: data.phone || "123-456-7890",
-            about: data.about || "Tell us about yourself.",
           });
         })
         .catch((error) => console.error("Error fetching user data:", error));
@@ -57,15 +56,13 @@ const ChefProfile = () => {
   const handleSave = (field) => {
     const token = sessionStorage.getItem("Token");
 
-    fetch(`${BASE_URL}/chefs/update-by-uid`, {
+    fetch(`${BASE_URL}/clients/update-by-uid`, {
       method: "PUT",
       headers: {
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
-      [field]: userInfo[field] 
-      }),
+      body: JSON.stringify({ [field]: userInfo[field] }),
     })
       .then((response) => {
         if (!response.ok) throw new Error("Failed to update user data");
@@ -73,10 +70,11 @@ const ChefProfile = () => {
       })
       .then((data) => {
         console.log("Profile updated:", data);
-        setIsEditing((prev) => ({ ...prev, [field]: false }));
+        
       })
       .catch((error) => console.error("Error updating profile:", error));
   };
+
 
   return (
     <div className="profile-container">
@@ -112,41 +110,11 @@ const ChefProfile = () => {
               </div>
             </div>
           ))}
-          <div className="profile-stats">
-        <div className="stats-card">
-          <p>Services Completed</p>
-          <div className="stats-value">
-            <span>13 Complete</span>
-            <button>
-              <i className="fa fa-clipboard"></i>
-            </button>
-          </div>
+          <hr />
         </div>
-        <div className="stats-card">
-          <p>Ratings</p>
-          <div className="stats-value">
-            <span>4 Stars</span>
-            <button>
-              <i className="fa fa-star"></i>
-            </button>
-          </div>
-        </div>
-        <div className="reviews-section">
-          <h3>Customer Reviews</h3>
-          <div className="review">
-            <h4>Ankit Srivastava</h4>
-            <div className="stars">
-              <span>⭐⭐⭐⭐</span>
-            </div>
-            <p>Very talented and we enjoyed every single dish.</p>
-          </div>
-          <a href="#">See all reviews →</a>
-        </div>
-        </div>
-      </div>
       </div>
     </div>
   );
 };
 
-export default ChefProfile;
+export default ClientProfile;

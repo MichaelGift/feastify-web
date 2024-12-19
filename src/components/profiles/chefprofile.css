@@ -77,7 +77,7 @@
     background: #fff;
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   }
   
   .stats-card p {
@@ -104,7 +104,6 @@
     background: #fff;
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   .review h4 {
@@ -117,13 +116,29 @@
     margin-bottom: 0.5rem;
   }
   
-  /* a {
-    text-decoration: none;
-    color: #fda702;
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-top: 1rem;
-    display: inline-block;
-  } */
+    text-align: center;
+  }
+  
   .info-value input,
 .info-value textarea {
   width: 100%;
