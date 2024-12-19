@@ -59,6 +59,7 @@ export default function ChefLogin({ setAuthToken }) {
           .then((data) => {
             sessionStorage.setItem('Token', user.accessToken);
             sessionStorage.setItem('role', data.role || 'chef');
+
             setAuthToken(user.accessToken);
             setLoginStatus(`Welcome, ${user.firstName || 'User'}!`);
             navigate('/');
