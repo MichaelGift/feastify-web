@@ -25,7 +25,7 @@ import ExperienceBooking from './components/experiences/experience';
 import ChefProfile from './components/profiles/chefprofile';
 import Checkout from './components/checkout/checkout';
 import ChefLogin from './components/login/chefLogin';
-import Footer from "./components/footer/footer.v2";
+import Footer from "./components/footer/footer.v3";
 import Banner from "./components/promotion/banner";
 import Chat from './components/chat/chat';
 import Unauthorized from './components/unauthorized/unauthorized';
