@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/navbar/navbar.v2';
-import Landingpage from './pages/landingpage/landing-page';
+import Landingpage from './pages/landingpage/landing-page.v2';
 import Hirepage from './components/landing page/landingpage';
 import EventType from './components/events/events';
 import ServiceDay from './components/service/service';

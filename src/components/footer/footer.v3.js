@@ -39,7 +39,7 @@ export default function footer() {
                             <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
                                 <Link className="text-dark">FAQ</Link>
                             </p>
-                            
+
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Payment Accepted</p>
                             <FontAwesomeIcon className="fa-2xl mx-1" icon={faCcVisa} />
                             <FontAwesomeIcon className="fa-2xl mx-1" icon={faCcMastercard} />
