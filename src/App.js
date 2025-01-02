@@ -2,6 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/navbar/navbar.v2';
 import Landingpage from './pages/landingpage/landing-page.v2';
+import AboutUs from './pages/aboutus/about-us';
 import Hirepage from './components/landing page/landingpage';
 import EventType from './components/events/events';
 import ServiceDay from './components/service/service';
@@ -9,7 +10,6 @@ import ServiceSchedule from './components/service/serviceschedule';
 import ServiceQuality from './components/service/serviceQuality';
 import DietaryRestrictions from './components/service/diet';
 import CuisineType from './components/cuisine/Cuisine';
-import AboutUs from './components/aboutus/Aboutus';
 import Joy from './components/share-the-joy/joy';
 import SpreadJoyPage from './components/spread-the-joy/page';
 import Comingsoon from './components/comingsoon/comingsoon';
@@ -89,6 +89,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Landingpage />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/chef-hire" element={<Hirepage />} />
           <Route path="/chat" element={<Chat />} />
           {/* Role-based protected routes */}
