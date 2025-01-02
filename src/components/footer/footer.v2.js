@@ -1,7 +1,7 @@
 import footerLogo from '../../assets/logo/footer-logo-.png'
 import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from '@fortawesome/free-brands-svg-icons';
+import {faFacebook, faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 export default function footer() {
     const currentYear = new Date().getFullYear();

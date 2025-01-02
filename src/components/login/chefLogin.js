@@ -8,6 +8,7 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth';
 import { auth } from '../../firebase';
+import './auth.css';
 import { BASE_URL } from '../../App';
 
 export default function ChefLogin({ setAuthToken }) {
@@ -91,14 +92,16 @@ export default function ChefLogin({ setAuthToken }) {
   };
 
   return (
-    <div className="">
-      <form onSubmit={handleSubmit}>
-        <div className="">
-          <label className="" htmlFor="email">
-            Email
-          </label>
+    <div className="p-5 m-auto container">
+      <form onSubmit={handleSubmit} className='p-5 rounded-2'>
+        <div className="mb-5 fw-medium fs-2 text-capitalize">
+          Welcome Back
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label" htmlFor="email">Email</label>
           <input
-            className=""
+            className="form-control rounded m-0"
             type="email"
             id="email"
             name="email"
@@ -109,24 +112,21 @@ export default function ChefLogin({ setAuthToken }) {
           />
         </div>
 
-        <div className="">
-          <div className="">
-            <label className="" htmlFor="password">
-              Password
-            </label>
-            <a
-              href="#"
+        <div className="mb-3">
+          <div className="d-flex justify-content-between">
+            <label className="form-label fs-6" htmlFor="password">Password</label>
+            <a href="#"
               onClick={(e) => {
                 e.preventDefault();
                 setResetEmail(email);
                 handlePasswordReset();
-              }}
-            >
+              }}>
               Forgot Password?
             </a>
           </div>
+
           <input
-            className=""
+            className="form-control rounded m-0"
             type="password"
             id="password"
             name="password"
@@ -137,15 +137,12 @@ export default function ChefLogin({ setAuthToken }) {
           />
         </div>
 
-        <button
-          className=""
-          type="submit"
-        >
+        <button className="px-4 py-2 rounded-1 border-0 mb-2" type="submit">
           Log In
         </button>
 
         {loginStatus && <p className="status_message">{loginStatus}</p>}
-        <p className=''>
+        <p className="sign_up">
           Don't have an account? <Link to="/chef-register">Sign up</Link>
         </p>
       </form>
