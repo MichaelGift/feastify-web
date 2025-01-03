@@ -3,6 +3,19 @@ import col2a from "../../assets/images/img-col-2a.png";
 import col3a from "../../assets/images/img-col-3a.png";
 import col4a from "../../assets/images/img-col-4a.png";
 import star from "../../assets/logo/star.svg";
+import r1 from '../../assets/images/review-1.png'
+import r2 from '../../assets/images/review-2.png'
+import s1 from '../../assets/images/service-1.png'
+import s2 from '../../assets/images/service-2.png'
+import s3 from '../../assets/images/service-3.png'
+import g1 from '../../assets/images/gallery-1.png'
+import g2 from '../../assets/images/gallery-2.png'
+import g3 from '../../assets/images/gallery-3.png'
+import g4 from '../../assets/images/gallery-4.png'
+import g5 from '../../assets/images/gallery-5.png'
+import g6 from '../../assets/images/gallery-6.png'
+import g7 from '../../assets/images/gallery-7.png'
+import g8 from '../../assets/images/gallery-8.png'
 
 export default function AboutUs() {
     return (
@@ -70,7 +83,7 @@ export default function AboutUs() {
                             <div className="row">
                                 <div className="col-md-5">
                                     <div className="rounded-4" style={{
-                                        backgroundImage: `url(${col1a})`,
+                                        backgroundImage: `url(${r1})`,
                                         backgroundSize: 'cover',
                                         backgroundPosition: 'center',
                                         height: '16rem'
@@ -96,7 +109,7 @@ export default function AboutUs() {
                             <div className="row">
                                 <div className="col-md-5">
                                     <div className="rounded-4" style={{
-                                        backgroundImage: `url(${col1a})`,
+                                        backgroundImage: `url(${r2})`,
                                         backgroundSize: 'cover',
                                         backgroundPosition: 'center',
                                         height: '16rem'
@@ -128,24 +141,24 @@ export default function AboutUs() {
                     Our services at a glance
                 </p>
 
-                <div className="row">
+                <div className="row justify-content-center">
                     <div className="col-md-4 p-0">
                         <div className="p-3">
-                            <div className="shadow-sm rounded-4 d-flex flex-column">
+                            <div className="shadow-sm rounded-4 d-flex flex-column" style={{height: '35rem'}}>
                                 <div className="rounded-top-4" style={{
-                                    backgroundImage: `url(${col2a})`,
+                                    backgroundImage: `url(${s1})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     height: '22rem'
                                 }}/>
 
                                 <p className="fs-3 fw-medium text-center mt-2">Private Chef Services</p>
-                                <p className="fs-6 fw-light text-center mx-2">Personalized dining experiences for
-                                    intimate
-                                    gatherings.</p>
+                                <p className="fs-6 fw-light text-center mx-2">
+                                    Personalized dining experiences for intimate gatherings.
+                                </p>
 
                                 <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4">Book
+                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">Book
                                     A
                                     Private Chef
                                 </button>
@@ -154,46 +167,44 @@ export default function AboutUs() {
                     </div>
                     <div className="col-md-4 p-0">
                         <div className="p-3">
-                            <div className="shadow-sm rounded-4 d-flex flex-column">
+                            <div className="shadow-sm rounded-4 d-flex flex-column" style={{height: '35rem'}}>
                                 <div className="rounded-top-4" style={{
-                                    backgroundImage: `url(${col2a})`,
+                                    backgroundImage: `url(${s2})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     height: '22rem'
                                 }}/>
 
-                                <p className="fs-3 fw-medium text-center mt-2">Private Chef Services</p>
-                                <p className="fs-6 fw-light text-center mx-2">Personalized dining experiences for
-                                    intimate
-                                    gatherings.</p>
+                                <p className="fs-3 fw-medium text-center mt-2">Event Catering</p>
+                                <p className="fs-6 fw-light text-center mx-2">
+                                    Full-service catering for corporate and private events.
+                                </p>
 
                                 <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4">Book
-                                    A
-                                    Private Chef
+                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
+                                     Book Service
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4 p-0">
                         <div className="p-3">
-                            <div className="shadow-sm rounded-4 d-flex flex-column">
+                            <div className="shadow-sm rounded-4 d-flex flex-column" style={{height: '35rem'}}>
                                 <div className="rounded-top-4" style={{
-                                    backgroundImage: `url(${col2a})`,
+                                    backgroundImage: `url(${s3})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     height: '22rem'
                                 }}/>
 
-                                <p className="fs-3 fw-medium text-center mt-2">Private Chef Services</p>
-                                <p className="fs-6 fw-light text-center mx-2">Personalized dining experiences for
-                                    intimate
-                                    gatherings.</p>
+                                <p className="fs-3 fw-medium text-center mt-2">Themed Events</p>
+                                <p className="fs-6 fw-light text-center mx-2">
+                                    Cuisine driven group experiences, curated for food lovers.
+                                </p>
 
                                 <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4">Book
-                                    A
-                                    Private Chef
+                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
+                                    Book Service
                                 </button>
                             </div>
                         </div>
@@ -208,7 +219,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g1})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -218,7 +229,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g2})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -228,7 +239,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g3})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -238,7 +249,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g4})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -251,7 +262,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g5})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -261,7 +272,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g6})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -271,7 +282,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g7})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
@@ -281,7 +292,7 @@ export default function AboutUs() {
                     <div className="col-md-3 p-0">
                         <div className="p-2">
                             <div className="rounded-4" style={{
-                                backgroundImage: `url(${col4a})`,
+                                backgroundImage: `url(${g8})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 height: '20rem'
