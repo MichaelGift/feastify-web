@@ -181,9 +181,8 @@ export default function AboutUs() {
                                 </p>
 
                                 <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">Book
-                                    A
-                                    Private Chef
+                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
+                                     Book Service
                                 </button>
                             </div>
                         </div>
