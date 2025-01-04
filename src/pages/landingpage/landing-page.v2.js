@@ -1,5 +1,6 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {Link } from 'react-router-dom'
 import col1a from '../../assets/images/img-col-1.png';
 import col2a from '../../assets/images/img-col-2.png';
 import col3a from '../../assets/images/img-col-3.png';
@@ -15,7 +16,7 @@ import brand4 from '../../assets/images/brand-4.png';
 import brand5 from '../../assets/images/brand-5.png';
 import brand6 from '../../assets/images/brand-6.png';
 
-
+const evenData = "https://docs.google.com/forms/d/e/1FAIpQLScd4TSKuvPKH8dXynOnOT3JTJDDyxd0Ghsy7451PMyqSLCmmw/viewform"
 
 export default function landingPage() {
     return (
@@ -164,9 +165,9 @@ export default function landingPage() {
                             plate.
                         </p>
 
-                        <button className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
-                        </button>
+                        </Link>
                     </div>
                     <div className="col-md-3 d-flex flex-column mb-2" style={{height: '35rem'}}>
                         <div className="rounded-4 mb-3" style={{
@@ -186,9 +187,9 @@ export default function landingPage() {
                             Creating dishes that celebrate nature’s bounty is my way of making every meal a celebration.
                         </p>
 
-                        <button className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
-                        </button>
+                        </Link>
                     </div>
                     <div className="col-md-3 d-flex flex-column mb-2" style={{height: '35rem'}}>
                         <div className="rounded-4 mb-3" style={{
@@ -208,9 +209,9 @@ export default function landingPage() {
                             To me, food is an art form, and every meal should be as beautiful as it is delicious.
                         </p>
 
-                        <button className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
-                        </button>
+                        </Link>
                     </div>
                     <div className="col-md-3 d-flex flex-column mb-2" style={{height: '35rem'}}>
                         <div className="rounded-4 mb-3" style={{
@@ -230,9 +231,9 @@ export default function landingPage() {
                             Cooking is storytelling, and every dish shares a chapter of culture and passion.
                         </p>
 
-                        <button className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -311,9 +312,9 @@ export default function landingPage() {
                         colorful, modern, and imaginative dishes, including corporate and event<br/>
                         catering
                     </p>
-                    <button className="btn bg-white text-black px-5 py-3 fw-medium rounded-pill">
+                    <Link to={evenData} className="btn bg-white text-black px-5 py-3 fw-medium rounded-pill">
                         Book Us Now
-                    </button>
+                    </Link>
                 </div>
             </section>
 
