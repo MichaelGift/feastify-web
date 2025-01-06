@@ -1,7 +1,7 @@
 import footerLogo from '../../assets/logo/footer-logo-.png'
 import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFacebook, faInstagram, faLinkedin, faCcVisa, faApplePay, faCcMastercard} from '@fortawesome/free-brands-svg-icons';
+import {faTiktok, faInstagram, faLinkedin, faCcVisa, faApplePay, faCcMastercard} from '@fortawesome/free-brands-svg-icons';
 
 export default function footer() {
     const currentYear = new Date().getFullYear();
@@ -50,13 +50,13 @@ export default function footer() {
                     <div className="bg-dark mb-3 align-self-center" style={{height: '1px', width: '90%'}}></div>
                     <div className="d-flex flex-column align-items-center mb-3">
                     <div className="d-flex flex-row mb-3">
-                        <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon className="btn" icon={faFacebook} />
+                        <a href="https://www.tiktok.com/@thefeastify" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon className="btn" icon={faTiktok} />
                         </a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/company/thefeastify/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon className="btn" icon={faLinkedin} />
                         </a>
-                        <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/thefeastify/" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon className="btn" icon={faInstagram} />
                         </a>
                     </div>

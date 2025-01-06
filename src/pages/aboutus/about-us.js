@@ -16,6 +16,11 @@ import g5 from '../../assets/images/gallery-5.png'
 import g6 from '../../assets/images/gallery-6.png'
 import g7 from '../../assets/images/gallery-7.png'
 import g8 from '../../assets/images/gallery-8.png'
+import {Link} from "react-router-dom";
+
+
+const eventData = "https://docs.google.com/forms/d/e/1FAIpQLScd4TSKuvPKH8dXynOnOT3JTJDDyxd0Ghsy7451PMyqSLCmmw/viewform"
+
 
 export default function AboutUs() {
     return (
@@ -30,9 +35,9 @@ export default function AboutUs() {
                     curate unique cuisine-themed experiences across Africa.
                 </p>
 
-                <button className="rounded-pill px-4 py-2 bg-black text-white mt-2" style={{fontFamily: 'Nunito'}}>
+                <Link to={eventData} className="btn rounded-pill px-4 py-2 bg-black text-white mt-2" style={{fontFamily: 'Nunito'}}>
                     Book Event Catering
-                </button>
+                </Link>
             </section>
 
             <section className="container mb-5">
@@ -157,11 +162,12 @@ export default function AboutUs() {
                                     Personalized dining experiences for intimate gatherings.
                                 </p>
 
-                                <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">Book
+                                <Link
+                                    to={eventData}
+                                    className=" btn px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">Book
                                     A
                                     Private Chef
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -180,10 +186,11 @@ export default function AboutUs() {
                                     Full-service catering for corporate and private events.
                                 </p>
 
-                                <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
+                                <Link
+                                    to = {eventData}
+                                    className="btn px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
                                      Book Service
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -202,10 +209,11 @@ export default function AboutUs() {
                                     Cuisine driven group experiences, curated for food lovers.
                                 </p>
 
-                                <button
-                                    className="px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
+                                <Link
+                                    to={eventData}
+                                    className="btn px-4 py-2 text-capitalize bg-black text-white rounded-pill mx-auto mb-4 mt-auto">
                                     Book Service
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
