@@ -16,7 +16,8 @@ import brand4 from '../../assets/images/brand-4.png';
 import brand5 from '../../assets/images/brand-5.png';
 import brand6 from '../../assets/images/brand-6.png';
 
-const evenData = "https://docs.google.com/forms/d/e/1FAIpQLScd4TSKuvPKH8dXynOnOT3JTJDDyxd0Ghsy7451PMyqSLCmmw/viewform"
+const eventData = "https://docs.google.com/forms/d/e/1FAIpQLScd4TSKuvPKH8dXynOnOT3JTJDDyxd0Ghsy7451PMyqSLCmmw/viewform"
+const whatsappContact= "wa.link/9yfb0t"
 
 export default function landingPage() {
     return (
@@ -165,7 +166,7 @@ export default function landingPage() {
                             plate.
                         </p>
 
-                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={eventData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
                         </Link>
                     </div>
@@ -187,7 +188,7 @@ export default function landingPage() {
                             Creating dishes that celebrate nature’s bounty is my way of making every meal a celebration.
                         </p>
 
-                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={eventData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
                         </Link>
                     </div>
@@ -209,7 +210,7 @@ export default function landingPage() {
                             To me, food is an art form, and every meal should be as beautiful as it is delicious.
                         </p>
 
-                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={eventData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
                         </Link>
                     </div>
@@ -231,7 +232,7 @@ export default function landingPage() {
                             Cooking is storytelling, and every dish shares a chapter of culture and passion.
                         </p>
 
-                        <Link to ={evenData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
+                        <Link to ={eventData} className="btn bg-black text-white px-5 py-3 fw-medium rounded-pill mx-auto mt-auto">
                             Book Chef
                         </Link>
                     </div>
@@ -312,7 +313,7 @@ export default function landingPage() {
                         colorful, modern, and imaginative dishes, including corporate and event<br/>
                         catering
                     </p>
-                    <Link to={evenData} className="btn bg-white text-black px-5 py-3 fw-medium rounded-pill">
+                    <Link to={eventData} className="btn bg-white text-black px-5 py-3 fw-medium rounded-pill">
                         Book Us Now
                     </Link>
                 </div>
@@ -696,9 +697,9 @@ export default function landingPage() {
                     <p className="fs-6 text-white text-center" style={{fontFamily: 'Nunito'}}>
                         Can’t find the answer you’re looking for? Please chat to our friendly team.
                     </p>
-                    <button className="btn bg-white text-black px-5 py-3 fw-medium rounded-pill">
+                    <Link to={whatsappContact} className="btn bg-white text-black px-5 py-3 fw-medium rounded-pill">
                         Chat With Us
-                    </button>
+                    </Link>
                 </div>
             </section>
 
