@@ -101,10 +101,12 @@ export default function AboutUs() {
                                         ))}
                                     </p>
                                     <p className="mt-auto">
-                                        "We love the feastify! Our designers were using it for their projects,
-                                        so we already knew what kind of design they want."
+                                        "We had such a great experience with The Feastify! The best thing about it
+                                        is how simple it is to find a private chef who can cook amazing food right in your home.
+                                        It made our family dinner feel so special, and we didn’t have to worry about
+                                        a thing. We’ll definitely use it again for our next event!"
                                     </p>
-                                    <p className="mt-3" style={{color: "#FB9D00"}}>
+                                    <p  style={{color: "#FB9D00"}}>
                                         Jenny Wilson Family
                                     </p>
                                 </div>
@@ -127,10 +129,11 @@ export default function AboutUs() {
                                         ))}
                                     </p>
                                     <p className="mt-auto">
-                                        "We love the feastify! Our designers were using it for their projects,
-                                        so we already knew what kind of design they want."
+                                        "The Feastify was amazing! The chef we booked made delicious food and took care
+                                        of everything, which made our event so much easier. It was great having such
+                                        a special meal at home without any stress. We’ll definitely use it again!"
                                     </p>
-                                    <p className="mt-3" style={{color: "#FB9D00"}}>
+                                    <p  style={{color: "#FB9D00"}}>
                                         Devon Lane
                                     </p>
                                 </div>
