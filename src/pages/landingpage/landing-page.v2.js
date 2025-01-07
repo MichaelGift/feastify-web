@@ -34,33 +34,10 @@ export default function landingPage() {
                     We make every corporate and private gatherings extraordinary with a
                     touch of premium culinary magic.”
                 </p>
-                <form className="border form-inline border-md-bg border-1 px-5 py-2 rounded-pill">
-                    <div className="form-group">
-                        <div className="border-2 border-end me-2">
-                            <label htmlFor="email" className="form-label m-0">Event Type</label>
-                            <input type="text" className="form-control m-0 bg-white border-0 ps-0"
-                                   placeholder="Choose your event type"/>
-                        </div>
-                        <div className="border-2 border-end me-2">
-                            <label htmlFor="email" className="form-label m-0">Location</label>
-                            <input type="text" className="form-control m-0 bg-white border-0 ps-0"
-                                   placeholder="Enter the address"/>
-                        </div>
-                        <div className="border-2 border-end me-2">
-                            <label htmlFor="email" className="form-label m-0">Service Begins</label>
-                            <input type="date" className="form-control m-0 bg-white border-0 ps-0"
-                                   placeholder="Add date"/>
-                        </div>
-                        <div className="border-2 border-end me-2">
-                            <label htmlFor="email" className="form-label m-0">Service Ends</label>
-                            <input type="date" className="form-control m-0 bg-white border-0 ps-0"
-                                   placeholder="Add date"/>
-                        </div>
-                    </div>
-                    <button className="btn rounded-circle bg-black my-auto">
-                        <FontAwesomeIcon icon={faArrowRight} style={{color: "#FB9D00"}}/>
-                    </button>
-                </form>
+
+                <Link to={eventData} className="btn rounded-pill w-25 py-3 bg-black text-white mt-2 fs-4" style={{fontFamily: 'Nunito'}}>
+                    Book Event Catering
+                </Link>
             </section>
 
             <section className="container mb-5">
