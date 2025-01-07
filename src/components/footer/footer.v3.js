@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTiktok, faInstagram, faLinkedin, faCcVisa, faApplePay, faCcMastercard} from '@fortawesome/free-brands-svg-icons';
 
+const eventData = "https://docs.google.com/forms/d/e/1FAIpQLScd4TSKuvPKH8dXynOnOT3JTJDDyxd0Ghsy7451PMyqSLCmmw/viewform"
+const chefRegister = "https://docs.google.com/forms/d/e/1FAIpQLSc7dq4kQOYNrF9QIdwiV_Hi0_OEBYUenxwxUMJUvcEJXdTGcg/viewform?usp=dialog"
+const themeExperience = "https://docs.google.com/forms/d/e/1FAIpQLSdS6-fzfUke4eeyAr1hlaVo3HtgAeQLInbUvQK9uYGfz6DqXg/viewform"
+
+
 export default function footer() {
     const currentYear = new Date().getFullYear();
     return (
@@ -19,28 +24,28 @@ export default function footer() {
                         <div className="col-md-3 p-4 text-center text-md-left">
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Main Links</p>
                             <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
-                                <Link to="/chef-hire" className="text-dark">Hire Private Chefs</Link>
+                                <Link to={eventData} className="text-dark" style={{textDecoration: 'none'}}>Hire Private Chefs</Link>
                             </p>
                             <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
-                                <Link to="/" className="text-dark">Group Experiences</Link>
+                                <Link to={themeExperience} className="text-dark" style={{textDecoration: 'none'}}>Group Experiences</Link>
                             </p>
                             <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
-                                <Link to="/contact-us" className="text-dark">Contact Us</Link>
+                                <Link to="/contact-us" className="text-dark" style={{textDecoration: 'none'}}>Contact Us</Link>
                             </p>
                             <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
-                                <Link to="/chef-register" className="text-dark">Chef Register</Link>
+                                <Link to={chefRegister} className="text-dark" style={{textDecoration: 'none'}}>Chef Register</Link>
                             </p>
                         </div>
-                        <div className=" col-md-3 p-4 text-center text-md-left">
+                        <div className=" col-md-3 p-4 text-center text-md-left" >
                             <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Legal</p>
                             <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
-                                <Link className="text-dark">Terms & Conditions</Link>
+                                <Link className="text-dark" style={{textDecoration: 'none'}}>Terms & Conditions</Link>
                             </p>
-                            <p className="fs-6 fw-normal" style={{font: 'Nunito'}}>
-                                <Link className="text-dark">FAQ</Link>
-                            </p>
+                            <a className="fs-6 fw-normal text-dark" style={{font: 'Nunito', textDecoration: 'none'}} href="#faq-section">
+                                <span className="text-dark" style={{fontWeight: '500'}}>FAQ</span>
+                            </a>
 
-                            <p className="fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Payment Accepted</p>
+                            <p className="mt-3 fs-5 fw-medium" style={{font: 'Nunito', color: '#FB9D00'}}>Payment Accepted</p>
                             <FontAwesomeIcon className="fa-2xl mx-1" icon={faCcVisa} />
                             <FontAwesomeIcon className="fa-2xl mx-1" icon={faCcMastercard} />
                             <FontAwesomeIcon className="fa-2xl mx-1" icon={faApplePay} />
