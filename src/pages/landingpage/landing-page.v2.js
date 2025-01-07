@@ -11,7 +11,7 @@ import chef3 from '../../assets/images/chef-3.png';
 import chef4 from '../../assets/images/chef-4.png';
 import brand1 from '../../assets/images/brand-1.png';
 import brand2 from '../../assets/images/brand-2.png';
-import brand3 from '../../assets/images/brand-3.svg';
+import brand3 from '../../assets/images/brand-7.png';
 import brand4 from '../../assets/images/brand-4.png';
 import brand5 from '../../assets/images/brand-5.png';
 import brand6 from '../../assets/images/brand-6.png';
@@ -268,7 +268,7 @@ export default function landingPage() {
                     <div className="col-md-2">
                         <div style={{
                             backgroundImage: `url(${brand3})`,
-                            backgroundSize: 'auto',
+                            backgroundSize: 'contain',
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: 'center',
                             height: '10rem'
