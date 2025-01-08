@@ -47,17 +47,17 @@ export default function Navigation() {
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav border-0"/>
 
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto align-items-center">
-                            <Link to={"/"} className="nav-link text-white fw-semibold me-3">Home</Link>
-                            <Link to={"/about-us"} className="nav-link text-white fw-semibold me-3">About Us</Link>
-                            <Link to={eventData} className="nav-link text-white fw-semibold me-3">Hire A Private
+                    <Navbar.Collapse id="basic-navbar-nav d-flex align-items-center">
+                        <Nav className="mx-auto">
+                            <Link to={"/"} className="nav-link text-white fw-semibold me-5">Home</Link>
+                            <Link to={"/about-us"} className="nav-link text-white fw-semibold me-5">About Us</Link>
+                            <Link to={eventData} className="nav-link text-white fw-semibold me-5">Hire A Private
                                 Chef</Link>
-                            <Link to={themeExperience} className="nav-link text-white fw-semibold me-3">Themed
+                            <Link to={themeExperience} className="nav-link text-white fw-semibold me-5">Themed
                                 Experiences</Link>
                         </Nav>
 
-                        <Nav className="align-items-center">
+                        <Nav>
                             <Link className="bg-light text-black btn fw-semibold px-4 py-2 mx-auto rounded-5"
                                   to={chefRegister}>
                                 Chefs Register
