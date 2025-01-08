@@ -25,11 +25,11 @@ export default function landingPage() {
     return (
         <>
             <section className="container d-flex flex-column align-items-center mb-4">
-                <p className="mt-5 display-4 fw-medium text-center">
+                <p className="mt-5 display-3 fw-bold text-center text-capitalize">
                     Your <span style={{color: '#FB9D00'}}>Event</span>
-                    , Our <span style={{color: '#FB9D00'}}>Culinary</span> Magic
+                    , Our <span style={{color: '#FB9D00'}}>Culinary</span> Magic!
                 </p>
-                <p className="fs-5 text-center" style={{font: "Nunito"}}>
+                <p className="fs-5 text-center px-5" style={{font: "Nunito"}}>
                     “Elevate your event with unforgettable dishes and seamless service.
                     We make every corporate and private gatherings extraordinary with a
                     touch of premium culinary magic.”
@@ -123,7 +123,7 @@ export default function landingPage() {
             </section>
 
             <section className="container mb-5">
-                <p className="fs-1 fw-bold text-center" style={{fontFamily: 'Nunito'}}>A taste of the talent we
+                <p className="fs-1 fw-bold text-center text-capitalize" style={{font: 'Nunito'}}>A taste of the talent we
                     offer</p>
                 <div className="row">
                     <div className="col-md-3 d-flex flex-column mb-2" style={{height: '35rem'}}>
@@ -223,10 +223,10 @@ export default function landingPage() {
             </section>
 
             <section className="container mb-5">
-                <p className="fs-1 fw-bold text-center" style={{fontFamily: 'Nunito'}}>
+                <p className="fs-1 fw-bold text-center text-capitalize" style={{font: 'Nunito'}}>
                     Inspired by brands that redefine excellence
                 </p>
-                <p className="fs-6 text-muted text-center" style={{fontFamily: 'Nunito'}}>
+                <p className="fs-6 text-muted text-center" style={{font: 'Nunito'}}>
                     Brands shown do not imply affiliation or endorsement, they inspire us alot.
                 </p>
                 <div className="row p-3">
@@ -288,7 +288,7 @@ export default function landingPage() {
 
             <section className="container mb-5 bg-black rounded-4">
                 <div className="d-flex flex-column align-items-center p-5 m-3">
-                    <p className="fs-1 fw-bold text-white text-center" style={{fontFamily: 'Nunito'}}>
+                    <p className="fs-1 fw-bold text-white text-center text-capitalize" style={{font: 'Nunito'}}>
                         Delight in every bite, <span style={{color: '#FB9D00'}}>Every Occasion.</span>
                     </p>
                     <p className="fs-6 text-white text-center" style={{fontFamily: 'Nunito'}}>
@@ -303,7 +303,7 @@ export default function landingPage() {
             </section>
 
             <section className="container" id="faq-section">
-                <p className="fs-3 text-center text-capitalize fw-medium mt-5" style={{font: 'Nunito'}}>
+                <p className="fs-1 text-center text-capitalize fw-bold mt-5" style={{font: 'Nunito'}}>
                     Frequently Asked Questions
                 </p>
                 <div className="row mb-5">
