@@ -35,7 +35,7 @@ export default function landingPage() {
                     touch of premium culinary magic.”
                 </p>
 
-                <Link to={eventData} className="btn rounded-pill w-25 py-3 bg-black text-white mt-2 fs-4" style={{fontFamily: 'Nunito'}}>
+                <Link to={eventData} className="btn rounded-pill py-3 px-5 bg-black text-white mt-2 fs-4" style={{fontFamily: 'Nunito'}}>
                     Book Event Catering
                 </Link>
             </section>
