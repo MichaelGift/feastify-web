@@ -32,7 +32,7 @@ export default function Navigation() {
 
     return (
         <>
-            <Navbar expand="lg" className="bg-black shadow-sm">
+            <Navbar expand="lg" className="bg-black shadow-sm" style={{height: '6.125rem'}}>
                 <Container>
                     <Link to="/" className="navbar-brand d-flex align-items-center m-0 p-0">
                         <img
@@ -60,7 +60,7 @@ export default function Navigation() {
                         <Nav className="align-items-center">
                             <Link className="bg-light text-black btn fw-semibold px-4 py-2 mx-auto rounded-5"
                                   to={chefRegister}>
-                                Chef Register
+                                Chefs Register
                             </Link>
                         </Nav>
 
